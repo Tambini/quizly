@@ -131,9 +131,9 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Add Contact Form    |    L     |     3 hrs      |      hrs     |    3 hrs    |
+| Create CRUD Actions |    H     |     3 hrs      |      hrs     |     TBD     |
+| TOTAL               |          |     6 hrs      |      hrs     |     TBD     |
 
 
 <br>
