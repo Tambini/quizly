@@ -1,9 +1,7 @@
 # **QUIZLY**
+Code Wizards
 - By Sinara, Carolyn & Nolan
-## Project Planning
-
-> The Project Planning section should be completed for your project pitch with instructors.
-
+![](images/nerdycheetah.png)
 ### Overview
 
 _**Quizly** is a trivia game site that allows users to be served a series of trivia questions one at a time, tallying up a score. Users will be able to register a username and password and login. There will be a section showing all-time high personal scores, and all-time high scores for all users. Users will be able to submit their own custom questions for administrator approval and eventually be added to the mix of questions. Users will be able to choose which category of questions they want to answer._
@@ -17,10 +15,6 @@ Created, designed, and developed by [Sinara Arliss](), [Nolan Giles](), and [Car
 
 Team values and expectations can be found on our project's [Google document]().
 
-### Permissions
-
-
-### MVP Client (Front End)
 
 #### Wireframes
 
@@ -56,6 +50,15 @@ _The **Quizly** MVP consists of user registration/login, playing a single game o
 - _Set # of Quiz questions proposed and answered (the game part)_
 - _Score saved on DB_
 
+### Stretch Goals
+- _Users can submit custom questions_
+- _Custom questions can be submitted for Administrator approval before being added_
+- _Players can choose which category of questions they want questions from_
+- _Sound effects/music_
+- _countdown timer & dynamic scoring_
+- _user customized categories_
+- _Viewing Score list different sorting_
+
 #### Libraries
 
 |     Library      | Description                                |
@@ -65,6 +68,30 @@ _The **Quizly** MVP consists of user registration/login, playing a single game o
 |     Express      | _Is a web application framework for Node.js, and is the de facto standard server framework for Node.js._ |
 |  Express Router  | _Routing refers to how an application’s endpoints (URIs) respond to client requests._ |
 
+
+
+<br>
+
+### MVP Server (Back End)
+
+![game](images/Trivia_tables.png)
+
+#### ERD Model
+
+#### Data Heirarchy
+
+``` structure
+
+database_db
+|__ users/
+|__ score/
+|__ trivia/
+
+```
+
+<br>
+
+***
 #### Component Hierarchy
 
 ``` structure
@@ -111,34 +138,6 @@ src
 | Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
-
-
-<br>
-
-### MVP Server (Back End)
-
-![game](images/Trivia_tables.png)
-
-#### ERD Model
-
-> Use this section to display an image of a computer generated ERD model.
-
-
-
-#### Data Heirarchy
-
-``` structure
-
-database_db
-|__ users/
-|__ score/
-|__ trivia/
-
-```
-
-<br>
-
-***
 
 <br>
 
