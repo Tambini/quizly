@@ -35,7 +35,7 @@ _Sitemap_
 
 
 
-_The **Quizly** MVP consists of user registration/login, playing a single game of random multiple-choice trivia and receiving a score based on incorrect/correct answers regardless if logged in or not.  User if logged in will have a score saved to the high score list._
+_The **Quizly** MVP consists of user registration/login, playing a single game of random multiple-choice trivia and receiving a score based on incorrect/correct answers regardless if logged in or not.  If user is logged in they will have a score saved to the high score list._
 
 
 
@@ -70,9 +70,13 @@ _The **Quizly** MVP consists of user registration/login, playing a single game o
 
 ### MVP Server (Back End)
 
-![game](images/Trivia_tables.png)
+- _Users table which contains username/password with proper bcrypt authentication as well as an admin flag_
+- _Trivia table which contains all the trivia, answers, category and whether or not they need to be approved_
+- _Score table which contains name and score_
+
 
 #### ERD Model
+![game](images/Trivia_tables.png)
 
 #### Data Heirarchy
 
@@ -94,10 +98,7 @@ database_db
 
 src
 |__ assets/
-      |__ fonts
-      |__ graphics
       |__ images
-      |__ mockups
 |__ components/
       |__ Header.js
       |__ Footer.js
