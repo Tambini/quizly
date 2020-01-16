@@ -144,7 +144,6 @@ src
 
 #### Post-MVP Data
 
-- _Utilize the Giphy API to welcome new users with funny gifs._
 
 <br>
 
