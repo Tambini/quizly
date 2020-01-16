@@ -124,7 +124,7 @@ src
 |   GameBoard    |   class    |   y   |   n   | _Will render one question with answers at a time linked to category_      |
 | LandingPage | functional |   n   |   y   | _Homepage where you can choose to play or login/register_                 |
 | Login/Register | functional |   n   |   y   | _Form to login or register and a link to the other_                 |
-|    ScoreList    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    ScoreList    | functional |   n   |   n   | _Where Highscore & if logged in personal scores are shown_ |
 
 
 
