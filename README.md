@@ -1,7 +1,7 @@
 # **QUIZLY**
 Code Wizards
 - By Sinara, Carolyn & Nolan
-![](images/nerdycheetah.png)
+![](images/codeWizards.png)
 ### Overview
 
 _**Quizly** is a trivia game site that allows users to be served a series of trivia questions one at a time, tallying up a score. Users will be able to register a username and password and login. There will be a section showing all-time high personal scores, and all-time high scores for all users. Users will be able to submit their own custom questions for administrator approval and eventually be added to the mix of questions. Users will be able to choose which category of questions they want to answer._
@@ -144,7 +144,6 @@ src
 
 #### Post-MVP Data
 
-- _Utilize the Giphy API to welcome new users with funny gifs._
 
 <br>
 
