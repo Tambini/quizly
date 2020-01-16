@@ -13,7 +13,7 @@ Created, designed, and developed by [Sinara Arliss](), [Nolan Giles](), and [Car
 
 ### Team Expectations
 
-Team values and expectations can be found on our project's [Google document]().
+Team values and expectations can be found on our project's [Google document](https://docs.google.com/document/d/1HuQh1WgurZ3NwArKQuIuiLO4fWk-3NN5VMNvcH-lZiY/).
 
 
 #### Wireframes
