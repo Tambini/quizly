@@ -18,20 +18,15 @@ Team values and expectations can be found on our project's [Google document](htt
 
 #### Wireframes
 
-
-![game](images/game.jpeg)
-
-
-![guest](images/guest.jpeg)
-
-
 ![homepage](images/homepage.jpeg)
-
 
 ![login register](images/Login_Register.jpeg)
 
+![guest](images/guest.jpeg)
 
-![Components ERD](images/componentERD.jpeg)
+![game](images/game.jpeg)
+
+![sitemap](images/componentERD.jpeg)
 
 
 
