@@ -119,21 +119,13 @@ src
 
 |  Component   |    Type    | state | props | Description                                                      |
 | :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Footer  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   GameBoard    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| LandingPage | functional |   n   |   y   | _The cards will render the post info via props._                 |
+|    Header    | functional |   n   |   n   | _The header will contain the logo._               |
+|  Footer  | functional |   n   |   n   | _Our names &year_       |
+|   GameBoard    |   class    |   y   |   n   | _Will render one question with answers at a time linked to category_      |
+| LandingPage | functional |   n   |   y   | _Homepage where you can choose to play or login/register_                 |
+| Login/Register | functional |   n   |   y   | _Form to login or register and a link to the other_                 |
 |    ScoreList    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
-#### Component Estimates
-
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |      hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |      hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |      hrs     |     TBD     |
 
 
 <br>
