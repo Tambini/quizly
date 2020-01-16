@@ -26,6 +26,7 @@ Team values and expectations can be found on our project's [Google document](htt
 
 ![game](images/game.jpeg)
 
+_Sitemap_
 ![sitemap](images/componentERD.jpeg)
 
 
