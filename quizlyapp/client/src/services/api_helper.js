@@ -77,14 +77,14 @@ export const getUnapprovedTrivia = async () => {
 }
 
 //create new trivia question, addNewTrivia({ answer: "paris", option1: "berlin", option2: "bordeaux", option3: "eiffel tower", question: "This is the capital of France", value: 200, category: "geography", approved: false})
-export const addNewTrivia = async (trivia) => {
-  const trivia = await api.post('/trivia', trivia);
+export const addNewTrivia = async (newTrivia) => {
+  const trivia = await api.post('/trivia', newTrivia);
   return trivia.data;
 }
 
 //update trivia, editTrivia(630, { answer: "paris", option1: "berlin", option2: "bordeaux", option3: "eiffel tower", question: "This is the capital of France", value: 200, category: "geography", approved: true})
-export const editTrivia = async (id, trivia) => {
-  const trivia = await api.put(`/trivia/${id}`, trivia);
+export const editTrivia = async (id, editedTrivia) => {
+  const trivia = await api.put(`/trivia/${id}`, editedTrivia);
   return trivia.data;
 }
 
