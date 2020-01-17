@@ -13,17 +13,6 @@ triviaRouter.get('/', async (req, res) => {
   }
 })
 
-//Get one question by id route
-// triviaRouter.get('/:id', async (req, res) => {
-//   try {
-//     const trivia = await Trivia.findByPk(req.params.id)
-//     res.json(trivia);
-//   } catch (e) {
-//     console.error(e);
-//     res.json({ err: e.message });
-//   }
-// })
-
 //get trivia by category
 triviaRouter.get('/:category', async (req, res) => {
   try {
