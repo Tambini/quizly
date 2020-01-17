@@ -1,0 +1,83 @@
+body {
+  background-color: rgb(203, 203, 203);
+}
+
+.error {
+  color: red;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 5px;
+  min-width: 300px;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 300px;
+  align-items: center;
+  text-align: justify;
+}
+
+.login-form-wrapper, .register-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 5px;
+  min-width: 300px;
+  align-items: center;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  box-shadow: 1px 1px 5px 1px #cbcbcb
+}
+
+input {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+}
+
+button, input[type=submit] {
+  background-color: rgb(76, 129, 175); 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 100px;
+}
+
+h2, h4 {
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  color: rgb(90, 93, 99); 
+}
+
+label {
+  text-align: center;
+  color: rgb(73, 76, 82); 
+}
+
+header {
+  text-align: center;
+}
+
+img {
+  max-width: 200px;
+}
