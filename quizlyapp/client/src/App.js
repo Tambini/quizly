@@ -79,15 +79,60 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.currentUser)
     return (
       <div className="App" >
 
         <Header />
 
-        <div className="login-register-wrappers">
-          <Home />
-          <Login />
+        <div>
+          {this.state.currentUser ?
+            <div>
+              <p>Hello, {this.state.currentUser.username}</p>
+              <button onClick={this.handleLogout}>Logout</button>
+            </div>
+            : <Link to='/login' > Login </Link>
+          }
         </div>
+
+        <div>
+          {this.state.currentUser ?
+            <div>
+              <p>Hello, {this.state.currentUser.username}</p>
+              <button onClick={this.handleLogout}>Logout</button>
+            </div>
+            : <Link to='/register' > Register </Link>
+          }
+        </div>
+
+
+
+        <div className="login-register-wrappers">
+          <Route path="/login" render={() => (
+            <div>
+              <Login
+                handleLogin={this.handleLogin}
+                currentUser={this.state.currentUser}
+              />
+            </div>
+          )} />
+
+          <Route path="/register" render={() => (
+            <div>
+              <Register
+                handleRegister={this.handleRegister}
+                currentUser={this.state.currentUser}
+              />
+            </div>
+          )} />
+        </div>
+
+
+        <div>
+          {this.state.errorText &&
+            <p className="error">{this.state.errorText}</p>}
+        </div>
+
 
         <footer>
           <Footer />
