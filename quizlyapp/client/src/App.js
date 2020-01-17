@@ -95,9 +95,9 @@ class App extends React.Component {
         <Home />
         <Login />
         <Register />
-        <Question
+        {/* <Question
           questions={this.state.questions}
-        />
+        /> */}
       </div>
     );
   }
