@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => (
   <div>
-    <Link to='/' > Footer </Link>
-    <h2>Welcome to Quizly!</h2>
+    <h4>© Developed by Nolan Gilles, Sinara Arliss and Carolyn Tambini. All rights reserved.</h4>
   </div>
 )
 
 export default Footer;
+
