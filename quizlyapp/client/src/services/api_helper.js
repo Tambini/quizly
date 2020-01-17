@@ -48,7 +48,7 @@ export const getScores = async () => {
 
 //get all scores from one person
 export const getScoresByName = async (name) => {
-  const scores = await api.get(`/posts/${name}`);
+  const scores = await api.get(`/scores/${name}`);
   return scores.data;
 }
 
