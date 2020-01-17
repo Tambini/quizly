@@ -8,17 +8,17 @@ const sequelize = new Sequelize({
   }
 });
 
-class Users extends Sequelize.Model { }
+class User extends Sequelize.Model { }
 class Score extends Sequelize.Model { }
 class Trivia extends Sequelize.Model { }
 
-Users.init({
+User.init({
   username: Sequelize.STRING,
   password_digest: Sequelize.STRING,
   admin: Sequelize.BOOLEAN
 }, {
   sequelize,
-  modelName: 'users'
+  modelName: 'user'
 })
 
 Score.init({
@@ -43,11 +43,11 @@ Trivia.init({
   modelName: 'trivia'
 });
 
-Users.hasMany(Score, { onDelete: 'cascade' });
-Score.belongsTo(Users);
+User.hasMany(Score, { onDelete: 'cascade' });
+Score.belongsTo(User);
 
 module.exports = {
-  Users,
+  User,
   Score,
   Trivia,
   sequelize
