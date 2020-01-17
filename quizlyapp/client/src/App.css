@@ -43,6 +43,12 @@ form {
   box-shadow: 1px 1px 5px 1px #cbcbcb
 }
 
+.login-register-wrappers {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
 input {
   width: 200px;
   padding: 10px;
@@ -74,9 +80,7 @@ label {
   color: rgb(73, 76, 82); 
 }
 
-header {
-  text-align: center;
-}
+
 
 img {
   max-width: 200px;
