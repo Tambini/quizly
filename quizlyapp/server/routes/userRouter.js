@@ -18,19 +18,29 @@ const buildAuthResponse = (user) => {
   }
 }
 
-userRouter.get('/admins', async (req, res) => {
+userRouter.get('/all', async (req, res) => {
   try {
-    const userList = await User.findAll({
-      where: {
-        admin: true
-      }
-    })
+    const userList = await User.findAll();
     res.json(userList);
   } catch (e) {
     console.error(e.message);
     res.json(e.message);
   }
-})
+});
+
+userRouter.get('/admins', async (req, res) => {
+  try {
+    const adminList = await User.findAll({
+      where: {
+        admin: true
+      }
+    })
+    res.json(adminList);
+  } catch (e) {
+    console.error(e.message);
+    res.json(e.message);
+  }
+});
 
 userRouter.delete('/:id', async (req, res) => {
   try {
@@ -42,7 +52,7 @@ userRouter.delete('/:id', async (req, res) => {
     console.error(e);
     res.json({ err: e.message });
   }
-})
+});
 
 
 userRouter.post('/register', async (req, res, next) => { // check if user already exists on front-end do that before hitting this.
@@ -60,7 +70,7 @@ userRouter.post('/register', async (req, res, next) => { // check if user alread
   } catch (err) {
     next(err);
   }
-})
+});
 
 userRouter.post('/login', async (req, res, next) => {
   try {
@@ -78,11 +88,11 @@ userRouter.post('/login', async (req, res, next) => {
   } catch (e) {
     next(e);
   }
-})
+});
 
 userRouter.get('/verify', restrict, (req, res) => {
   const user = res.locals.user;
   res.json(user);
-})
+});
 
 module.exports = userRouter;
