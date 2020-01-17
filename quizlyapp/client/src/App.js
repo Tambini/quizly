@@ -3,11 +3,12 @@ import './App.css';
 import { Route, Link } from 'react-router-dom';
 
 // custom api helper
-import { loginUser, registerUser, verifyUser } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, getAllTrivia } from './services/api_helper';
 // custom components
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Register';
+import Question from './components/Question';
 
 
 class App extends React.Component {
@@ -60,7 +61,6 @@ class App extends React.Component {
         currentUser
       })
     }
-
   }
 
   // logout
@@ -71,11 +71,22 @@ class App extends React.Component {
     localStorage.removeItem('authToken');
   }
 
+  getAllQuestions = async () => {
+    const questions = await getAllTrivia();
+
+    this.setState({
+      questions
+    })
+  }
+
   componentDidMount() {
     this.handleVerify();
+    this.getAllQuestions();
   }
 
   render() {
+    // console.log(this.state.questions);
+    // console.log(this.state.currentUser);
     return (
       <div className="App" >
 
@@ -84,7 +95,9 @@ class App extends React.Component {
         <Home />
         <Login />
         <Register />
-
+        <Question
+          questions={this.state.questions}
+        />
       </div>
     );
   }
