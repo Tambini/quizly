@@ -29,7 +29,7 @@ scoreRouter.get('/:name', async (req, res) => {
     })
     res.json({ score });
   } catch (e) {
-    console.err(e.message);
+    console.error(e.message);
     res.json(e.message);
   }
 })
@@ -41,7 +41,7 @@ scoreRouter.post('/', async (req, res) => {
     const newScore = await Score.create(data);
     res.json({ newScore });
   } catch (e) {
-    console.err(e.message);
+    console.error(e.message);
     res.json(e.message);
   }
 })
