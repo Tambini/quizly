@@ -1,10 +1,55 @@
-
-const { Trivia } = require('./models');
+const { Trivia, User, Score } = require('./models');
 
 const main = async () => {
   await Trivia.destroy({
     where: {},
   });
+  await User.destroy({
+    where: {},
+  });
+  await Score.destroy({
+    where: {},
+  });
+
+  const sinara = await User.create({
+    username: "Sinara",
+    password_digest: "$2b$11$7QAZqSbQMKdSUELv5ayHfeXFgItLPBmsPg60oHrOEX8bOKklbOlKC",
+    admin: true
+  });
+  const carolyn = await User.create({
+    username: "carolyn",
+    password_digest: "$2b$11$q9xqtcWfpdJlfAIKNSvqm.3vKgYNPMAVpnMGvl59CZEgbBtYVEvQS",
+    admin: true,
+  })
+  const nolan = await User.create({
+    username: "nolan",
+    password_digest: "$2b$11$yFqvts.WRvPe2oqlJJXeueIp/mfw0M9C51.mfGA3jJDHZcRRkHjxu",
+    admin: true,
+  })
+
+
+  const nolanScore = await Score.create({
+    username: "nolan",
+    score: 10000
+  })
+  const carolynScore = await Score.create({
+    username: "carolyn",
+    score: 20000
+  })
+  const sinaraScore1 = await Score.create({
+    username: "Sinara",
+    score: 50000
+  })
+  const sinaraScore2 = await Score.create({
+    username: "Sinara",
+    score: 500
+  })
+
+
+  await sinara.addScore([sinaraScore1, sinaraScore2]);
+  await nolan.addScore(nolanScore);
+  await carolyn.addScore(carolynScore);
+
 
   await Trivia.bulkCreate([
     {
