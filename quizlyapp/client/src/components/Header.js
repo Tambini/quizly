@@ -1,12 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-
-const Home = () => (
+const Header = () => (
   <div>
-    <Link to='/' > Home </Link>
-    <h2>Welcome to Quizly!</h2>
+    <h4>Welcome to Quizly!</h4>
   </div>
 )
 
-export default Home;
+export default Header;

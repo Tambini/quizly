@@ -8,6 +8,9 @@ import { loginUser, registerUser, verifyUser } from './services/api_helper';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Register';
+import Footer from './components/Footer';
+import Header from './components/Header';
+
 
 
 class App extends React.Component {
@@ -79,11 +82,16 @@ class App extends React.Component {
     return (
       <div className="App" >
 
-        <header> </header>
+        <Header />
 
-        <Home />
-        <Login />
-        <Register />
+        <div className="login-register-wrappers">
+          <Home />
+          <Login />
+        </div>
+
+        <footer>
+          <Footer />
+        </footer>
 
       </div>
     );
