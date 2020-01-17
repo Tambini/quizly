@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Home = () => (
-  <div>
+const Header = () => (
+  <header>
+    <h1>Welcome to Quizly!</h1>
     <Link to='/' > Home </Link>
-    <h2>Welcome to Quizly!</h2>
-  </div>
+  </header>
 )
 
-export default Home;
+export default Header;

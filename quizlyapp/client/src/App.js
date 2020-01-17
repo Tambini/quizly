@@ -8,7 +8,13 @@ import { loginUser, registerUser, verifyUser, getAllTrivia } from './services/ap
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Register';
+
 import Question from './components/Question';
+
+import Footer from './components/Footer';
+import Header from './components/Header';
+
+
 
 
 class App extends React.Component {
@@ -85,19 +91,74 @@ class App extends React.Component {
   }
 
   render() {
+
     // console.log(this.state.questions);
     // console.log(this.state.currentUser);
+
     return (
       <div className="App" >
 
-        <header> </header>
+        <Header />
 
-        <Home />
-        <Login />
-        <Register />
+        <div>
+          {this.state.currentUser ?
+            <div>
+              <p>Hello, {this.state.currentUser.username}</p>
+              <button onClick={this.handleLogout}>Logout</button>
+            </div>
+            : <Link to='/login' > Login </Link>
+          }
+        </div>
+
+        <div>
+          {this.state.currentUser ?
+            <div>
+              <p>Hello, {this.state.currentUser.username}</p>
+              <button onClick={this.handleLogout}>Logout</button>
+            </div>
+            : <Link to='/register' > Register </Link>
+          }
+        </div>
+
+
+
+        <div className="login-register-wrappers">
+          <Route path="/login" render={() => (
+            <div>
+              <Login
+                handleLogin={this.handleLogin}
+                currentUser={this.state.currentUser}
+              />
+            </div>
+          )} />
+
+          <Route path="/register" render={() => (
+            <div>
+              <Register
+                handleRegister={this.handleRegister}
+                currentUser={this.state.currentUser}
+              />
+            </div>
+          )} />
+        </div>
+
+
+        <div>
+          {this.state.errorText &&
+            <p className="error">{this.state.errorText}</p>}
+        </div>
+
+
+
+
         {/* <Question
           questions={this.state.questions}
         /> */}
+
+        <footer>
+          <Footer />
+        </footer>
+
       </div>
     );
   }
