@@ -27,3 +27,69 @@ export const verifyUser = async () => {
   }
   return false;
 }
+
+//get list of admins
+export const getAdmins = async () => {
+  const admins = await api.get('/users/admins');
+  return admins.data;
+}
+
+//get all users
+export const getUsers = async () => {
+  const users = await api.get('/users/all');
+  return users.data;
+}
+
+//get all scores
+export const getScores = async () => {
+  const scores = await api.get('/scores');
+  return scores.data;
+}
+
+//get all scores from one person
+export const getScoresByName = async (name) => {
+  const scores = await api.get(`/posts/${name}`);
+  return scores.data;
+}
+
+//add a new score addNewScore({username: "nolan", score: 500});
+export const addNewScore = async (score) => {
+  const newScore = await api.post('/scores', score);
+  return newScore.data;
+}
+
+//get all trivia questions
+export const getAllTrivia = async () => {
+  const trivia = await api.get('/trivia');
+  return trivia.data;
+}
+
+//get all trivia under one category, getTriviaByCategory("Around%20the%20World")
+export const getTriviaByCategory = async (category) => {
+  const trivia = await api.get(`/trivia/${category}`);
+  return trivia.data;
+}
+
+//get all yet-to-be-approved-by-admin trivia questions
+export const getUnapprovedTrivia = async () => {
+  const trivia = await api.get('/trivia/unapproved');
+  return trivia.data;
+}
+
+//create new trivia question, addNewTrivia({ answer: "paris", option1: "berlin", option2: "bordeaux", option3: "eiffel tower", question: "This is the capital of France", value: 200, category: "geography", approved: false})
+export const addNewTrivia = async (trivia) => {
+  const trivia = await api.post('/trivia', trivia);
+  return trivia.data;
+}
+
+//update trivia, editTrivia(630, { answer: "paris", option1: "berlin", option2: "bordeaux", option3: "eiffel tower", question: "This is the capital of France", value: 200, category: "geography", approved: true})
+export const editTrivia = async (id, trivia) => {
+  const trivia = await api.put(`/trivia/${id}`, trivia);
+  return trivia.data;
+}
+
+//delete trivia question, deleteTrivia(2002);
+export const deleteTrivia = async (id) => {
+  const trivia = await api.delete(`/trivia/${id}`);
+  return trivia.data;
+}
