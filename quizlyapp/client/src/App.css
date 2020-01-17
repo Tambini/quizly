@@ -80,7 +80,9 @@ label {
   color: rgb(73, 76, 82); 
 }
 
-
+header {
+  text-align: center;
+}
 
 img {
   max-width: 200px;
