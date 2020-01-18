@@ -12,7 +12,7 @@ import Home from './components/Register';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import GameBoard from './components/GameBoard';
-
+import GuestLanding from './components/GuestLanding'
 
 
 
@@ -134,11 +134,15 @@ class App extends React.Component {
             <p className="error">{this.state.errorText}</p>}
         </div>
 
-
-
-        <GameBoard
-          category={this.state.category}
-        />
+        <main>
+          <Route path="/trivia" render={() => <GuestLanding />} />
+          <Route path="/gameboard" render={() => (
+            <div>
+              <GameBoard
+                category={this.state.category} />
+            </div>
+          )} />
+        </main>
 
         <footer>
           <Footer />
