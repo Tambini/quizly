@@ -3,14 +3,22 @@ import './App.css';
 import { Route, Link } from 'react-router-dom';
 
 // custom api helper
-import { loginUser, registerUser, verifyUser, getAllTrivia } from './services/api_helper';
+import { loginUser, registerUser, verifyUser } from './services/api_helper';
+
 // custom components
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Register';
 import Footer from './components/Footer';
 import Header from './components/Header';
+<<<<<<< HEAD
 import Question from './components/Question';
+=======
+import GameBoard from './components/GameBoard';
+import GuestLanding from './components/GuestLanding';
+import UserLanding from './components/UserLanding';
+import ScoreList from './components/ScoreList'
+>>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
 
 
 class App extends React.Component {
@@ -19,7 +27,7 @@ class App extends React.Component {
     this.state = {
       currentUser: null,
       errorText: '',
-      questions: []
+      category: 'animals',
     }
   }
 
@@ -73,22 +81,16 @@ class App extends React.Component {
     localStorage.removeItem('authToken');
   }
 
-  getAllQuestions = async () => {
-    const questions = await getAllTrivia();
-
-    this.setState({
-      questions
-    })
-  }
-
   componentDidMount() {
     this.handleVerify();
-    this.getAllQuestions();
   }
 
   render() {
+<<<<<<< HEAD
     // console.log(this.state.questions);
     // console.log(this.state.currentUser);
+=======
+>>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
     return (
       <div className="App" >
 
@@ -143,13 +145,39 @@ class App extends React.Component {
         </div>
 
 
+<<<<<<< HEAD
+=======
+        <main>
+          <Route path="/trivia-guest-landing" render={() => <GuestLanding />} />
+          <Route path="/gameboard" render={() => (
+            <div>
+              {this.state.currentUser ?
+                <GameBoard
+                  category={this.state.category}
+                  username={this.state.currentUser.username} />
+                :
+                <GameBoard
+                  category={this.state.category}
+                  username="guest" />
+              }
+            </div>
+
+          )} />
+          <Route path="/trivia-user-landing" render={() =>
+            <UserLanding />} />
+        </main>
+
+>>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
         <footer>
           <Footer />
         </footer>
 
+<<<<<<< HEAD
         <Question
           questions={this.state.questions}
         />
+=======
+>>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
       </div>
     );
   }

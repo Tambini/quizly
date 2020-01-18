@@ -87,3 +87,57 @@ header {
 img {
   max-width: 200px;
 }
+
+.button-wrapper{
+  display:flex;  
+  flex-wrap: wrap;
+  margin:auto;
+}
+button {
+  width: 350px;
+  margin: 15px;
+  padding: 100px;
+  font-weight: bolder;
+  border-radius: 10px;
+  font-size: 40px;
+  text-align: center;
+
+}
+
+.button1{
+  background-color: #F79353;
+}
+.button2{
+  background-color: #23882B ;
+}
+.button3{
+  background-color: #E11C3D;
+ 
+}
+.button4{
+  background-color: #43ADE3;
+}
+.button5{
+  background-color: #E0D034;
+}
+.button6{
+  background-color:#1C65AD;
+  
+}
+.button7{
+  
+  background-color: #6DC681 ;
+}
+.button8{
+  background-color: #46178F; 
+}
+
+h1{
+  font-size: 50px;
+  text-align: center;
+}
+h3{
+  font-weight: lighter;
+  font-size: 20px;
+  text-align: center;
+}
