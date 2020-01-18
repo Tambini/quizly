@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
 //custom api helper
-import { getAllTrivia, getTriviaByCategory } from '../services/api_helper';
+import { getAllTrivia, getTriviaByCategory, addNewScore } from '../services/api_helper';
 
 //custom components
 import Question from './Question';
+import ScoreList from './ScoreList'
 
 
 //What i'm thinking is gameboard will be passed the API function from app, which is had from api_helper. It runs on mount and fills up the questionArray.
@@ -26,7 +27,8 @@ class GameBoard extends Component {
       message: '',
       questionsLoaded: false,
       showNextQuestionButton: false,
-      gameOver: false
+      gameOver: false,
+      showScores: false
     }
   }
 
@@ -62,8 +64,10 @@ class GameBoard extends Component {
       })
     } else {
       this.setState({
-        gameOver: true
+        gameOver: true,
+        showNextQuestionButton: false
       })
+      this.submitPlayerScore(this.state.scoreTotal);
     }
 
   }
@@ -111,6 +115,17 @@ class GameBoard extends Component {
     })
   }
 
+  showScores = () => {
+    this.setState({
+      showScores: true
+
+    })
+  }
+
+  submitPlayerScore = async (score) => {
+    await addNewScore({ username: this.props.username, score: score });
+  }
+
   componentDidMount = async () => { //if category is passed as a prop get only those questions, otherwise get all questions.
     this.props.category ?
       await this.getAllCategoryQuestions(this.props.category) :
@@ -118,32 +133,46 @@ class GameBoard extends Component {
   }
 
   render() {
-
     return (
       <div className="gameboard">
         <div className="gameboard-score">
           Score: {this.state.scoreTotal}
         </div>
+        <div className="gameboard-counter">
+          Question #: {this.state.questionCounter}
+        </div>
 
         {
-          !this.state.currentQuestion ?
+          !this.state.currentQuestion && !this.state.gameOver ?
             <button onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
             :
-            this.state.currentQuestion && !this.state.showNextQuestionButton ?
-              <Question
-                question={this.state.currentQuestion}
-                optionArray={this.state.optionArray}
-                optionSelected={this.optionSelected}
-              />
-              :
-              <div>
-                {this.state.message}
-                <button onClick={this.showNext}>NEXT QUESTION</button>
-              </div>
+            !this.state.showNextQuestionButton && !this.state.gameOver &&
+            <Question
+              question={this.state.currentQuestion}
+              optionArray={this.state.optionArray}
+              optionSelected={this.optionSelected}
+            />
         }
         {
-          this.state.gameOver &&
-          <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
+          this.state.showNextQuestionButton &&
+          <div>
+            {this.state.message}
+            <button onClick={this.showNext}>NEXT QUESTION</button>
+          </div>
+        }
+        {
+          this.state.gameOver && !this.state.showScores &&
+
+          <div>
+            <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
+            <button onClick={this.showScores}>See High Scores!</button>
+          </div>
+        }
+        {
+          this.state.showScores &&
+          <div>
+            <ScoreList />
+          </div>
         }
 
 
