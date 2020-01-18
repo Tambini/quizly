@@ -12,7 +12,8 @@ import Home from './components/Register';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import GameBoard from './components/GameBoard';
-import GuestLanding from './components/GuestLanding'
+import GuestLanding from './components/GuestLanding';
+import UserLanding from './components/UserLanding';
 
 
 
@@ -134,14 +135,17 @@ class App extends React.Component {
             <p className="error">{this.state.errorText}</p>}
         </div>
 
+
         <main>
-          <Route path="/trivia" render={() => <GuestLanding />} />
+          <Route path="/trivia-guest-landing" render={() => <GuestLanding />} />
           <Route path="/gameboard" render={() => (
             <div>
               <GameBoard
                 category={this.state.category} />
             </div>
           )} />
+          <Route path="/trivia-user-landing" render={() =>
+            <UserLanding />} />
         </main>
 
         <footer>

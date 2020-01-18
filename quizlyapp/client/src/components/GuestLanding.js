@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 class GuestLanding extends Component {
-  constructor(props) {
-    super(props)
-  }
+
 
   render() {
     return (
@@ -11,7 +9,7 @@ class GuestLanding extends Component {
         <h1>Let's Play</h1>
         <h3>click on any of the categories to enter the game</h3>
         <div className="button-wrapper">
-          <button className="button1">Category</button>
+          <button className="button1" onClick={() => this.props.navigation.navigate('Gamboard')}>Category</button>
           <button className="button2">Category</button>
           <button className="button3">Category</button>
           <button className="button4">Category</button>

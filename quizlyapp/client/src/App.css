@@ -89,8 +89,7 @@ img {
 }
 
 .button-wrapper{
-  display:flex;
-  text-align: center;
+  display:flex;  
   flex-wrap: wrap;
   margin:auto;
 }
@@ -101,6 +100,7 @@ button {
   font-weight: bolder;
   border-radius: 10px;
   font-size: 40px;
+  text-align: center;
 
 }
 
