@@ -79,7 +79,7 @@ const main = async () => {
       option1: "chickens",
       option2: "owls",
       option3: "parrots",
-      question: "The children are poults, the mothers, hens & the fathers,toms",
+      question: "The children are poults, the mothers hens & the fathers toms",
       value: 300,
       category: "animals",
       approved: true
