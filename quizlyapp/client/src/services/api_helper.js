@@ -42,19 +42,19 @@ export const getUsers = async () => {
 
 //get all scores
 export const getScores = async () => {
-  const scores = await api.get('/scores');
+  const scores = await api.get('/score');
   return scores.data;
 }
 
 //get all scores from one person
 export const getScoresByName = async (name) => {
-  const scores = await api.get(`/scores/${name}`);
+  const scores = await api.get(`/score/${name}`);
   return scores.data;
 }
 
 //add a new score addNewScore({username: "nolan", score: 500});
 export const addNewScore = async (score) => {
-  const newScore = await api.post('/scores', score);
+  const newScore = await api.post('/score', score);
   return newScore.data;
 }
 
