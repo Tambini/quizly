@@ -19,7 +19,7 @@ body {
   align-items: center;
 }
 
-form {
+.login-form, .register-form {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -93,7 +93,7 @@ img {
   flex-wrap: wrap;
   margin:auto;
 }
-button {
+.button1, .button2, .button3, .button4, .button5, .button6, .button7,.button8 {
   width: 350px;
   margin: 15px;
   padding: 100px;
@@ -140,4 +140,83 @@ h3{
   font-weight: lighter;
   font-size: 20px;
   text-align: center;
+}
+.question-form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+/* .game-stats{
+ 
+  text-align: center;
+  
+} */
+
+.gameboard-score{
+font-size:30px;
+font-weight:bold; 
+
+}
+.question-counter{
+  font-size:20px;
+
+ 
+}
+.question-category{
+  font-size:20px;
+ 
+}
+
+.question-question{
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  text-align:left;
+  font-weight:bold;
+  border: 1px solid red;
+}
+.question-answer-options{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+  border: 1px solid black;
+}
+.question-option{
+  
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 50px;
+    width: 100%;
+    margin:10px;
+    border: 1px solid blue;
+}
+
+.button-answer0, .button-answer1, .button-answer2, .button-answer3 {
+  width:50%;
+}
+
+
+.button-answer0 button{ 
+  background-color: #23882B;
+  width: 100%
+}
+.button-answer1 button{ 
+  background-color: #E11C3D;
+  width: 100%
+}
+.button-answer2 button{ 
+  background-color: #1C65AD;
+  width: 100%
+}
+.button-answer3 button{ 
+  background-color: #F79353;
+  width: 100%
+}
+
+.next-question{
+  border: 3px solid purple;
 }
