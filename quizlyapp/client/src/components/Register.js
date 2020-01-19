@@ -19,7 +19,7 @@ export default class Register extends Component {
   render() {
     return (
       <div className="register-form-wrapper">
-        <form onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
+        <form className="register-form" onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
           <h2>Register</h2>
           <label htmlFor="username">Username</label>
           <input
