@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addNewTrivia } from '../services/api_helper';
 
 class UserLanding extends Component {
   constructor(props) {
@@ -10,9 +11,15 @@ class UserLanding extends Component {
       option1: "",
       option2: "",
       option3: "",
-      Category: "",
+      category: "",
       value: "",
     }
+  }
+
+  handleDropdown = (e) => {
+    this.setState({
+      category: e.target.value
+    })
   }
 
   handleChange = (e) => {
@@ -24,6 +31,7 @@ class UserLanding extends Component {
 
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <h1>Let's Play</h1>
@@ -39,22 +47,33 @@ class UserLanding extends Component {
           <button className="button8">Category</button>
         </div>
 
-        <form className="QuestionForm">
+        <form className="QuestionForm"
+          onSubmit={(e) => addNewTrivia({
+            answer: this.state.answer,
+            option1: this.state.option1,
+            option2: this.state.option2,
+            option3: this.state.option3,
+            question: this.state.question,
+            category: this.state.category,
+            approved: false
+          })} >
           <h2>Submit a Trivia Question</h2>
           <label htmlFor="category"> Category</label>
-          <select className="dropdown">
-            <option value="Animals"> Animals</option>
-            <option value="Science"> Science</option>
-            <option value="History">History</option>
-            <option value="Stupid Answers"> Stupid Answers</option>
-            <option value="Arorund the World"> Around the world</option>
-          </select>
+          <div className="custom-select" >
+            <select onChange={this.handleDropdown}>
+              <option> Please select one</option>
+              <option value="animals"> Animals</option>
+              <option value="science"> science</option>
+              <option value="history">History</option>
+              <option value="studpid_answer"> Stupid aswers</option>
+              <option value="Around%20the%20World" > Around the world</option>
+            </select>
+          </div>
           <label htmlFor="question"> Question</label>
           <input type="text"
             name="question"
             value={this.state.question}
-            onChange={this.handleChange}
-          />
+            onChange={this.handleChange} />
           <label htmlFor="answer"> answer </label>
           <input type="answer"
             name="answer"
@@ -75,11 +94,10 @@ class UserLanding extends Component {
             name="option3"
             value={this.state.option3}
             onChange={this.handleChange} />
-
           <input type="submit" />
         </form>
 
-      </div>
+      </div >
     )
   }
 }
