@@ -12,6 +12,14 @@ export default class ScoreList extends React.Component {
     }
   }
 
+  sortScores = () => {
+    let topTen = this.state.scores.sort((a, b) => (a.score > b.score) ? -1 : 1)
+    topTen = topTen.slice(0, 10);
+    this.setState({
+      scores: topTen
+    })
+  }
+
   componentDidMount = async () => {
     const scores = await getScores();
 
@@ -19,18 +27,20 @@ export default class ScoreList extends React.Component {
       scores,
       scoresLoaded: true
     })
+    this.sortScores();
   }
 
   render() {
     console.log(this.state.scores)
     return (
       <div className="score-list">
+
         {this.state.scoresLoaded &&
 
           this.state.scores.map((score, key) => (
             <div key={key} className="score">
               <div className="score-number">
-                {key}
+                {key + 1}
               </div>
               <div className="score-name">
                 {score.username}

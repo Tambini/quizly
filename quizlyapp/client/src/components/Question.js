@@ -2,14 +2,6 @@ import React from 'react'
 
 function Question(props) {
   return (
-<<<<<<< HEAD
-    <div>
-      {this.props.questions.map((q, key) => (
-        <div>
-
-        </div>
-      )}
-=======
     <div className="question">
       <div className="question-category">
         Current Category: {props.question.category}
@@ -28,7 +20,6 @@ function Question(props) {
           </div>
         ))}
       </div>
->>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
     </div>
   )
 }
