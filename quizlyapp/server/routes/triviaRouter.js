@@ -14,7 +14,7 @@ triviaRouter.get('/', async (req, res) => {
 })
 
 //get trivia by category
-triviaRouter.get('/:category', async (req, res) => {
+triviaRouter.get('/category/:category', async (req, res) => {
   try {
     const category = req.params.category;
     const trivia = await Trivia.findAll({
@@ -30,7 +30,7 @@ triviaRouter.get('/:category', async (req, res) => {
 })
 
 //get trivia that are unapproved
-triviaRouter.get('/', async (req, res) => {
+triviaRouter.get('/unapproved', async (req, res) => {
   try {
     const trivia = await Trivia.findAll({
       where: {
@@ -44,18 +44,6 @@ triviaRouter.get('/', async (req, res) => {
   }
 })
 
-//frontend:
-// const newQuestion = {
-// answer: "answer",
-// option1: "wrong answer1",
-// option2: "wrong answer1",
-// option3: "wrong answer1",
-// question: "Question text",
-// value: 500,
-// category: "animals",
-// approved: "false"
-// }
-// axios.post("http://localhost:3003/trivia, newQuestion);
 //add new trivia
 triviaRouter.post('/', async (req, res) => {
   try {
@@ -87,7 +75,6 @@ triviaRouter.put('/:id', async (req, res) => {
   }
 })
 
-//axios.delete('localhost:3000/${trivia.id}')
 //delete trivia
 triviaRouter.delete('/:id', async (req, res) => {
   try {

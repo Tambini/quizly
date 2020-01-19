@@ -3,12 +3,18 @@ import './App.css';
 import { Route, Link } from 'react-router-dom';
 
 // custom api helper
-import { loginUser, registerUser, verifyUser } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, getAdmins } from './services/api_helper';
+
 // custom components
 import Login from './components/Login';
 import Register from './components/Register';
-import Home from './components/Register';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import GameBoard from './components/GameBoard';
+import GuestLanding from './components/GuestLanding';
+import UserLanding from './components/UserLanding';
+import AdminLanding from './components/AdminLanding'
+
 
 
 class App extends React.Component {
@@ -17,7 +23,8 @@ class App extends React.Component {
     this.state = {
       currentUser: null,
       errorText: '',
-      questions: []
+      category: 'animals',
+      admin: false
     }
   }
 
@@ -32,7 +39,8 @@ class App extends React.Component {
       const currentUser = await loginUser(loginData);
       this.setState({
         currentUser,
-        errorText: ''
+        errorText: '',
+        admin: true
       })
     }
   }
@@ -61,40 +69,99 @@ class App extends React.Component {
         currentUser
       })
     }
+  }
 
+  checkForAdmin = async () => {
+    const adminList = await getAdmins();
+    const admin = adminList.filter(name =>
+      name.username === this.state.currentUser.username
+    )
+
+    if (admin.length > 0) {
+      // console.log("checkForAdmin admin: " + admin.length + " " + admin[0].username)
+      // console.log("checkForAdmin currentUser: " + this.state.currentUser.username)
+      // console.log("YOU ARE ADMIN")
+      this.setState({
+        admin: true
+      })
+    } else {
+      // console.log("YOU ARE NOT ADMIN")
+      this.setState({
+        admin: false
+      })
+    }
   }
 
   // logout
   handleLogout = () => {
     this.setState({
-      currentUser: null
+      currentUser: null,
+      admin: false
     })
     localStorage.removeItem('authToken');
   }
 
-  componentDidMount() {
-    this.handleVerify();
+  componentDidMount = async () => {
+    await this.handleVerify();
+    if (this.state.currentUser !== null && this.state.currentUser.username)
+      this.checkForAdmin();
   }
 
   render() {
     return (
       <div className="App" >
 
-        <header>
-          <Home />
-          <Login />
-        </header>
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+          admin={this.state.admin}
+        />
+
+
+        <Route path="/login" render={() => (
+          <div>
+            <Login
+              handleLogin={this.handleLogin}
+              currentUser={this.state.currentUser}
+            />
+          </div>
+        )} />
+
+        <Route path="/register" render={() => (
+          <div>
+            <Register
+              handleRegister={this.handleRegister}
+              currentUser={this.state.currentUser}
+            />
+          </div>
+        )} />
+
+        <div>
+          {this.state.errorText &&
+            <p className="error">{this.state.errorText}</p>}
+        </div>
 
         <main>
-          <div>
-            
-          </div>
+          <Route path="/guest-landing" render={() =>
+            <GuestLanding />} />
+
+          <Route path="/user-landing" render={() =>
+            <UserLanding />} />
+
+          {this.state.admin &&
+            <Route path="/admin-landing" render={() => <AdminLanding />} />
+          }
+          
+          <Route path="/gameboard" render={() => (
+            <div>
+              <GameBoard
+                category={this.state.category} />
+            </div>
+          )} />
+
         </main>
 
-        <footer>
-          <Footer />
-        </footer>
-
+        <Footer />
 
       </div>
     );
@@ -102,4 +169,3 @@ class App extends React.Component {
 }
 
 export default App;
-
