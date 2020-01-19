@@ -14,7 +14,7 @@ triviaRouter.get('/', async (req, res) => {
 })
 
 //get trivia by category
-triviaRouter.get('/:category', async (req, res) => {
+triviaRouter.get('/category/:category', async (req, res) => {
   try {
     const category = req.params.category;
     const trivia = await Trivia.findAll({
