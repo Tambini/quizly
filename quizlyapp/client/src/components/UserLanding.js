@@ -47,7 +47,7 @@ class UserLanding extends Component {
           <button className="button8">Category</button>
         </div>
 
-        <form className="QuestionForm"
+        <form className="question-form"
           onSubmit={(e) => addNewTrivia({
             answer: this.state.answer,
             option1: this.state.option1,
