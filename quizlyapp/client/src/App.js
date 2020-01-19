@@ -14,7 +14,6 @@ import Header from './components/Header';
 import GameBoard from './components/GameBoard';
 import GuestLanding from './components/GuestLanding';
 import UserLanding from './components/UserLanding';
-import ScoreList from './components/ScoreList'
 
 
 class App extends React.Component {

@@ -7,12 +7,6 @@ import { getAllTrivia, getTriviaByCategory, addNewScore } from '../services/api_
 import Question from './Question';
 import ScoreList from './ScoreList'
 
-
-//What i'm thinking is gameboard will be passed the API function from app, which is had from api_helper. It runs on mount and fills up the questionArray.
-//If a category is also passed into the GameBoard in app.js it grabs just those questions from that category instead filling up the questionArray with those.
-//getRandomQuestion removes a random question out of the questionArray and places it into the currentQuestion state variable.
-//questionCounter will increment everytime getRandomQuestion is called, and that way we can limit the number of questions served that way. to 5,10,50 or user selected.
-
 class GameBoard extends Component {
   constructor(props) {
     super(props)
@@ -67,7 +61,7 @@ class GameBoard extends Component {
         gameOver: true,
         showNextQuestionButton: false
       })
-      this.submitPlayerScore(this.state.scoreTotal);
+
     }
 
   }
@@ -88,10 +82,6 @@ class GameBoard extends Component {
   }
 
   optionSelected = (e, playerChosenOption) => { //so the player has chosen their answer, were they right? call this on every answer choice made
-    console.log("TEST:")
-    console.log(playerChosenOption[0])
-    console.log("VS")
-    console.log(this.state.currentQuestion.answer)
     if (playerChosenOption[0] === this.state.currentQuestion.answer) {
       this.setState({
         scoreTotal: this.state.scoreTotal + this.state.currentQuestion.value,
@@ -123,7 +113,7 @@ class GameBoard extends Component {
   }
 
   submitPlayerScore = async (score) => {
-    await addNewScore({ username: this.props.username, score: score });
+    await addNewScore({ username: this.props.username, score: this.state.scoreTotal });
   }
 
   componentDidMount = async () => { //if category is passed as a prop get only those questions, otherwise get all questions.
@@ -142,7 +132,7 @@ class GameBoard extends Component {
           Question #: {this.state.questionCounter}
         </div>
 
-        {
+        {//if questions are not loaded and game isnt over, show play button, otherwise show the question/answer options
           !this.state.currentQuestion && !this.state.gameOver ?
             <button onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
             :
@@ -165,7 +155,10 @@ class GameBoard extends Component {
 
           <div>
             <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
-            <button onClick={this.showScores}>See High Scores!</button>
+            <button onClick={async () => {
+              this.showScores();
+              await this.submitPlayerScore(this.state.scoreTotal);
+            }}>See High Scores!</button>
           </div>
         }
         {

@@ -1,6 +1,6 @@
 const { Trivia, User, Score } = require('./models');
 
-const main = async () => {
+const seed = async () => {
   await Trivia.destroy({
     where: {},
   });
@@ -28,27 +28,51 @@ const main = async () => {
   })
 
 
-  const nolanScore = await Score.create({
+  const nolanScore1 = await Score.create({
     username: "nolan",
-    score: 10000
+    score: 100
   })
-  const carolynScore = await Score.create({
-    username: "carolyn",
-    score: 20000
+  const nolanScore2 = await Score.create({
+    username: "nolan",
+    score: 400
+  })
+  const nolanScore3 = await Score.create({
+    username: "nolan",
+    score: 700
   })
   const sinaraScore1 = await Score.create({
     username: "Sinara",
-    score: 50000
+    score: 200
   })
   const sinaraScore2 = await Score.create({
     username: "Sinara",
     score: 500
   })
+  const sinaraScore3 = await Score.create({
+    username: "Sinara",
+    score: 800
+  })
+  const carolynScore1 = await Score.create({
+    username: "carolyn",
+    score: 300
+  })
+  const carolynScore2 = await Score.create({
+    username: "carolyn",
+    score: 600
+  })
+  const carolynScore3 = await Score.create({
+    username: "carolyn",
+    score: 900
+  })
+  const carolynScore4 = await Score.create({
+    username: "carolyn",
+    score: 1000
+  })
 
 
-  await sinara.addScore([sinaraScore1, sinaraScore2]);
-  await nolan.addScore(nolanScore);
-  await carolyn.addScore(carolynScore);
+  await sinara.addScore([sinaraScore1, sinaraScore2, sinaraScore3]);
+  await nolan.addScore([nolanScore1, nolanScore2, nolanScore3]);
+  await carolyn.addScore([carolynScore1, carolynScore2, carolynScore3, carolynScore4]);
 
 
   await Trivia.bulkCreate([
@@ -597,7 +621,6 @@ const main = async () => {
 
     },
     {
-      id: 121,
       answer: "6",
       option1: "8",
       option2: "10",
@@ -608,7 +631,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 127,
       answer: "iron",
       option1: "steel",
       option2: "boar",
@@ -619,7 +641,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 133,
       answer: "time",
       option1: "height",
       option2: "up",
@@ -630,7 +651,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 139,
       answer: "a parasite",
       option1: "a virus",
       option2: "a child",
@@ -641,7 +661,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 301,
       answer: "an echo",
       option1: "red-shift",
       option2: "blue-shift",
@@ -652,7 +671,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 307,
       answer: "Charles Darwin",
       option1: "Benjamin Franklin",
       option2: "Stephen Jay Gould",
@@ -663,7 +681,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 319,
       answer: "an electron",
       option1: "a neutron",
       option2: "a proton",
@@ -674,7 +691,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 325,
       answer: "Cells",
       option1: "Proteins",
       option2: "acids",
@@ -685,7 +701,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1090,
       answer: "man",
       option1: "monkey",
       option2: "dog",
@@ -696,7 +711,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1096,
       answer: "Drake",
       option1: "Mises",
       option2: "Hayek",
@@ -707,7 +721,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1102,
       answer: "nursing",
       option1: "singing",
       option2: "dancing",
@@ -718,7 +731,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1108,
       answer: "sleet",
       option1: "hail",
       option2: "downpour",
@@ -729,7 +741,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1114,
       answer: "North America",
       option1: "South America",
       option2: "Austrailia",
@@ -740,7 +751,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1750,
       answer: "a cell",
       option1: "a bell",
       option2: "a cheetah",
@@ -751,7 +761,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1756,
       answer: "atoms",
       option1: "cells",
       option2: "minerals",
@@ -763,7 +772,6 @@ const main = async () => {
     },
 
     {
-      id: 1768,
       answer: "the equator",
       option1: "Florida",
       option2: "Greenland",
@@ -774,7 +782,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 1774,
       answer: "measuremen",
       option1: "cartography",
       option2: "geology",
@@ -785,7 +792,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2650,
       answer: "light",
       option1: "poop",
       option2: "chi",
@@ -796,7 +802,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 757,
       answer: "the Normans",
       option1: "the Scots",
       option2: " the Dutch ",
@@ -807,7 +812,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 763,
       answer: "the 16th",
       option1: "the 17th",
       option2: " the 14th",
@@ -818,7 +822,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 769,
       answer: "Japan",
       option1: "France",
       option2: " Denmark ",
@@ -829,7 +832,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 775,
       answer: "the Eisenhower Doctrine",
       option1: "the Monroe Doctrine",
       option2: " the Reagan Doctrine",
@@ -840,7 +842,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2437,
       answer: "Jerusalem",
       option1: "Mecca",
       option2: " Medina ",
@@ -851,7 +852,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2443,
       answer: "Rome",
       option1: "Paris",
       option2: "Istanbul ",
@@ -862,7 +862,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2449,
       answer: "Farouk",
       option1: "Faud I",
       option2: "Khafra",
@@ -873,7 +872,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2455,
       answer: "Elizabeth I",
       option1: "",
       option2: " ",
@@ -884,7 +882,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 2461,
       answer: "Denmark",
       option1: "Norway",
       option2: "Finland ",
@@ -895,7 +892,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3311,
       answer: "Pope",
       option1: "Pastor",
       option2: "Attorney General",
@@ -906,7 +902,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3317,
       answer: "General Custer",
       option1: "General Hooker",
       option2: "General Mattis",
@@ -917,7 +912,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3323,
       answer: "Pontiac",
       option1: "Brock",
       option2: "Amherst",
@@ -928,7 +922,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3329,
       answer: "Marie Curie",
       option1: "Sigrid Undset",
       option2: "Pearl S. Buck",
@@ -939,7 +932,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3335,
       answer: "Soviet Union",
       option1: "Nigeria",
       option2: "Yemen ",
@@ -950,7 +942,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3700,
       answer: "Joan of Arc",
       option1: "Marie of Anjou",
       option2: "Yolande of Aragon",
@@ -961,7 +952,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3706,
       answer: "Queen Victoria",
       option1: "Queen Elizabeth II",
       option2: "Mary, Queen of Scots ",
@@ -972,7 +962,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3712,
       answer: "the James Brothers (Frank & Jessie)",
       option1: "the Wilkes  Booth Brothers (Edwin & John)",
       option2: "the Wright brothers (Wilber & Orville)",
@@ -983,7 +972,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3718,
       answer: "the Persian Empire",
       option1: "the Roman Empire",
       option2: "the British Empire ",
@@ -994,7 +982,6 @@ const main = async () => {
       approved: true
     },
     {
-      id: 3724,
       answer: "the East India Company",
       option1: "Verrinigde Oostndisches Compagnie",
       option2: "Virginia Company ",
@@ -1008,3 +995,5 @@ const main = async () => {
   ])
   process.exit();
 }
+
+seed();
