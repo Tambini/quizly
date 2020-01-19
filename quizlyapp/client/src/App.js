@@ -21,9 +21,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUser: null,
+      currentUser: 'test',
       errorText: '',
       category: 'animals',
+      admin: false
     }
   }
 
@@ -38,7 +39,8 @@ class App extends React.Component {
       const currentUser = await loginUser(loginData);
       this.setState({
         currentUser,
-        errorText: ''
+        errorText: '',
+        admin: true
       })
     }
   }
@@ -85,52 +87,37 @@ class App extends React.Component {
     return (
       <div className="App" >
 
-        <Header />
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+          admin={this.state.admin}
+        />
 
-        <div>
-          {this.state.currentUser ?
-            <div>
-              <p>Hello, {this.state.currentUser.username}!</p>
-              <button className="logout-button" onClick={this.handleLogout}>Logout</button>
-            </div>
-            :
-            <div>
-              <Link to='/login'> Login </Link>
-              <br></br>
-              <Link to='/register'> Register </Link>
-            </div>
-          }
-        </div>
 
-        <div className="login-register-wrappers">
-          <Route path="/login" render={() => (
-            <div>
-              <Login
-                handleLogin={this.handleLogin}
-                currentUser={this.state.currentUser}
-              />
-            </div>
-          )} />
+        <Route path="/login" render={() => (
+          <div>
+            <Login
+              handleLogin={this.handleLogin}
+              currentUser={this.state.currentUser}
+            />
+          </div>
+        )} />
 
-          <Route path="/register" render={() => (
-            <div>
-              <Register
-                handleRegister={this.handleRegister}
-                currentUser={this.state.currentUser}
-              />
-            </div>
-          )} />
-        </div>
-
+        <Route path="/register" render={() => (
+          <div>
+            <Register
+              handleRegister={this.handleRegister}
+              currentUser={this.state.currentUser}
+            />
+          </div>
+        )} />
 
         <div>
           {this.state.errorText &&
             <p className="error">{this.state.errorText}</p>}
         </div>
 
-
         <main>
-
           <Route path="/guest-landing" render={() => <GuestLanding />} />
           <Route path="/user-landing" render={() =>
             <UserLanding />} />
@@ -140,12 +127,9 @@ class App extends React.Component {
                 category={this.state.category} />
             </div>
           )} />
-
         </main>
 
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
 
       </div>
     );
