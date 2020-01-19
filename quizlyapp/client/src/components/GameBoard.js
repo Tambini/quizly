@@ -125,11 +125,13 @@ class GameBoard extends Component {
   render() {
     return (
       <div className="gameboard">
-        <div className="gameboard-score">
-          Score: {this.state.scoreTotal}
-        </div>
-        <div className="gameboard-counter">
-          Question #: {this.state.questionCounter}
+        <div className="game-stats">
+          <div className="gameboard-score">
+            Score: {this.state.scoreTotal}
+          </div>
+          <div className="question-counter">
+            Question #: {this.state.questionCounter}
+          </div>
         </div>
 
         {//if questions are not loaded and game isnt over, show play button, otherwise show the question/answer options
@@ -137,15 +139,18 @@ class GameBoard extends Component {
             <button onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
             :
             !this.state.showNextQuestionButton && !this.state.gameOver &&
-            <Question
-              question={this.state.currentQuestion}
-              optionArray={this.state.optionArray}
-              optionSelected={this.optionSelected}
-            />
+            <div>
+
+              <Question
+                question={this.state.currentQuestion}
+                optionArray={this.state.optionArray}
+                optionSelected={this.optionSelected}
+              />
+            </div>
         }
         {
           this.state.showNextQuestionButton &&
-          <div>
+          <div className="next-question">
             {this.state.message}
             <button onClick={this.showNext}>NEXT QUESTION</button>
           </div>

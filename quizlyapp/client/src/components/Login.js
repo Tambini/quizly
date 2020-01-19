@@ -44,7 +44,7 @@ export default class Login extends Component {
           </form>
         }
         <UserLanding />
-        </div>
+      </div>
     )
   }
 
