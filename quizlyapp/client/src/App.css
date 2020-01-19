@@ -69,6 +69,23 @@ button, input[type=submit] {
   min-width: 100px;
 }
 
+.welcome-message p {
+  color: grey;
+  font-family: 'Satisfy', cursive;
+  font-size: 25px;
+  margin: 30px auto 0 auto;
+}
+
+.logout-button {
+  padding: 10px;
+  font-size: 16px;
+  max-width: 50px;
+  background-color: rgba(208, 208, 208, 0.386);
+  color: rgb(82, 82, 82);
+  font-weight: 500;
+  margin: 5px auto 30px auto;
+}
+
 h2, h4 {
   text-align: center;
   font-family: 'Satisfy', cursive;
@@ -80,8 +97,9 @@ label {
   color: rgb(73, 76, 82); 
 }
 
-header {
+header a {
   text-align: center;
+  text-decoration: none;
 }
 
 img {
@@ -93,7 +111,43 @@ img {
   flex-wrap: wrap;
   margin:auto;
 }
-.button1, .button2, .button3, .button4, .button5, .button6, .button7,.button8 {
+
+.homepage-options-form-wrapper, .homepage-options-form-wrapper a {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.login-box {
+  background-color: #E0D034;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 30px;
+}
+
+.register-box {
+  background-color: #23882B ;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 30px;
+}
+
+.guest-box {
+  background-color: #F79353;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 30px;
+}
+
+button {
   width: 350px;
   margin: 15px;
   padding: 100px;
@@ -146,13 +200,6 @@ h3{
   flex-wrap: wrap;
 }
 
-
-
-/* .game-stats{
- 
-  text-align: center;
-  
-} */
 
 .gameboard-score{
 font-size:30px;
