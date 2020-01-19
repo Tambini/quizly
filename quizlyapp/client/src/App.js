@@ -90,24 +90,17 @@ class App extends React.Component {
         <div>
           {this.state.currentUser ?
             <div>
-              <p>Hello, {this.state.currentUser.username}</p>
-              <button onClick={this.handleLogout}>Logout</button>
+              <p>Hello, {this.state.currentUser.username}!</p>
+              <button className="logout-button" onClick={this.handleLogout}>Logout</button>
             </div>
-            : <Link to='/login' > Login </Link>
-          }
-        </div>
-
-        <div>
-          {this.state.currentUser ?
+            :
             <div>
-              <p>Hello, {this.state.currentUser.username}</p>
-              <button onClick={this.handleLogout}>Logout</button>
+              <Link to='/login'> Login </Link>
+              <br></br>
+              <Link to='/register'> Register </Link>
             </div>
-            : <Link to='/register' > Register </Link>
           }
         </div>
-
-
 
         <div className="login-register-wrappers">
           <Route path="/login" render={() => (
