@@ -16,6 +16,7 @@ import GuestLanding from './components/GuestLanding';
 import UserLanding from './components/UserLanding';
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -136,23 +137,17 @@ class App extends React.Component {
 
 
         <main>
-          <Route path="/trivia-guest-landing" render={() => <GuestLanding />} />
+
+          <Route path="/guest-landing" render={() => <GuestLanding />} />
+          <Route path="/user-landing" render={() =>
+            <UserLanding />} />
           <Route path="/gameboard" render={() => (
             <div>
-              {this.state.currentUser ?
-                <GameBoard
-                  category={this.state.category}
-                  username={this.state.currentUser.username} />
-                :
-                <GameBoard
-                  category={this.state.category}
-                  username="guest" />
-              }
+              <GameBoard
+                category={this.state.category} />
             </div>
-
           )} />
-          <Route path="/trivia-user-landing" render={() =>
-            <UserLanding />} />
+
         </main>
 
         <footer>
@@ -165,4 +160,3 @@ class App extends React.Component {
 }
 
 export default App;
-
