@@ -66,7 +66,7 @@ export const getAllTrivia = async () => {
 
 //get all trivia under one category, getTriviaByCategory("Around%20the%20World")
 export const getTriviaByCategory = async (category) => {
-  const trivia = await api.get(`/trivia/${category}`);
+  const trivia = await api.get(`/trivia/category/${category}`);
   return trivia.data;
 }
 
