@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const triviaRouter = Router();
 const { Trivia } = require('../models');
+const Sequelize = require('sequelize');
 
 //get all trivia index
 triviaRouter.get('/', async (req, res) => {
@@ -23,6 +24,20 @@ triviaRouter.get('/category/:category', async (req, res) => {
       }
     })
     res.json(trivia);
+  } catch (e) {
+    console.error(e);
+    res.json({ err: e.message });
+  }
+})
+
+triviaRouter.get('/category', async (req, res) => {
+  try {
+    const categories = await Trivia.findAll({
+      attributes: [
+        [Sequelize.fn('DISTINCT', Sequelize.col('category')), 'category'],
+      ]
+    })
+    res.json(categories);
   } catch (e) {
     console.error(e);
     res.json({ err: e.message });
