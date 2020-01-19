@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import UserLanding from './UserLanding';
 
 export default class Login extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-form-wrapper">
-       
+        {!this.props.currentUser &&
           <form onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
             <h2>Login</h2>
             <label htmlFor="username">Username</label>
@@ -41,7 +42,8 @@ export default class Login extends Component {
             <input type="submit" />
             <Link to="/register">Register</Link>
           </form>
-        
+        }
+        <UserLanding />
         </div>
     )
   }

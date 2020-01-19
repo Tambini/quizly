@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserLanding from './UserLanding';
 
 export default class Register extends Component {
   constructor(props) {
@@ -18,25 +19,32 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="register-form-wrapper">
-        <form onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
-          <h2>Register</h2>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <input type="submit" />
-        </form>
+      <div>
+        {!this.props.currentUser &&
+
+          <div className="register-form-wrapper">
+
+            <form onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
+              <h2>Register</h2>
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                name="username"
+                value={this.state.username}
+                onChange={this.handleChange}
+              />
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                value={this.state.password}
+                onChange={this.handleChange}
+              />
+              <input type="submit" />
+            </form>
+          </div>
+        }
+        <UserLanding />
       </div>
     )
   }

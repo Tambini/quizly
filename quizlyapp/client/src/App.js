@@ -8,7 +8,6 @@ import { loginUser, registerUser, verifyUser } from './services/api_helper';
 // custom components
 import Login from './components/Login';
 import Register from './components/Register';
-import Home from './components/Register';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import GameBoard from './components/GameBoard';
@@ -21,7 +20,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUser: 'test',
+      currentUser: null,
       errorText: '',
       category: 'animals',
       admin: false
@@ -118,15 +117,19 @@ class App extends React.Component {
         </div>
 
         <main>
-          <Route path="/guest-landing" render={() => <GuestLanding />} />
+          <Route path="/guest-landing" render={() =>
+            <GuestLanding />} />
+
           <Route path="/user-landing" render={() =>
             <UserLanding />} />
+
           <Route path="/gameboard" render={() => (
             <div>
               <GameBoard
                 category={this.state.category} />
             </div>
           )} />
+
         </main>
 
         <Footer />
