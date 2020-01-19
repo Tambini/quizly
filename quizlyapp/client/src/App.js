@@ -11,14 +11,9 @@ import Register from './components/Register';
 import Home from './components/Register';
 import Footer from './components/Footer';
 import Header from './components/Header';
-<<<<<<< HEAD
-import Question from './components/Question';
-=======
 import GameBoard from './components/GameBoard';
 import GuestLanding from './components/GuestLanding';
 import UserLanding from './components/UserLanding';
-import ScoreList from './components/ScoreList'
->>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
 
 
 class App extends React.Component {
@@ -86,11 +81,6 @@ class App extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    // console.log(this.state.questions);
-    // console.log(this.state.currentUser);
-=======
->>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
     return (
       <div className="App" >
 
@@ -145,8 +135,6 @@ class App extends React.Component {
         </div>
 
 
-<<<<<<< HEAD
-=======
         <main>
           <Route path="/trivia-guest-landing" render={() => <GuestLanding />} />
           <Route path="/gameboard" render={() => (
@@ -167,17 +155,10 @@ class App extends React.Component {
             <UserLanding />} />
         </main>
 
->>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
         <footer>
           <Footer />
         </footer>
 
-<<<<<<< HEAD
-        <Question
-          questions={this.state.questions}
-        />
-=======
->>>>>>> 72670d05223deb0077c7c3293c7b4c920a5feb18
       </div>
     );
   }
