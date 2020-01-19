@@ -19,15 +19,19 @@ const Header = (props) => {
           </div>
           :
           <div className="homepage-options-form-wrapper">
-            <button className="login-box">
-              <Link to='/login'> Login </Link>
-            </button>
-            <button className="register-box">
-              <Link to='/register'> Register </Link>
-            </button>
-            <button className="guest-box">
-              <Link to='/guest-landing'> Guest </Link>
-            </button>
+
+            <Link to='/login'>
+              <button className="login-box"> Login </button>
+            </Link>
+
+            <Link to='/register'>
+              <button className="register-box"> Register </button>
+            </Link>
+
+            <Link to='/guest-landing'>
+              <button className="guest-box"> Guest </button>
+            </Link>
+
           </div>
         }
       </div>
