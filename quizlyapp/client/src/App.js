@@ -138,6 +138,8 @@ class App extends React.Component {
             <Login
               handleLogin={this.handleLogin}
               currentUser={this.state.currentUser}
+              setCategory={this.setCategory}
+              categoryList={this.state.categoryList}
             />
           </div>
         )} />
@@ -147,6 +149,8 @@ class App extends React.Component {
             <Register
               handleRegister={this.handleRegister}
               currentUser={this.state.currentUser}
+              setCategory={this.setCategory}
+              categoryList={this.state.categoryList}
             />
           </div>
         )} />
@@ -163,13 +167,17 @@ class App extends React.Component {
           />} />
 
         <Route path="/user-landing" render={() =>
-          <UserLanding />} />
+          <UserLanding
+            setCategory={this.setCategory}
+            categoryList={this.state.categoryList} />
+        } />
 
-        {this.state.admin &&
+        {
+          this.state.admin &&
           <Route path="/admin-landing" render={() => <AdminLanding />} />
         }
 
-        <Route path="/gameboard" render={() => (
+        < Route path="/gameboard" render={() => (
           <div>
             <GameBoard
               category={this.state.category} />
