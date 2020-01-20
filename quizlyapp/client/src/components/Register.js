@@ -42,7 +42,11 @@ export default class Register extends Component {
             </form>
           </div>
         }
-        <UserLanding />
+        {this.props.currentUser &&
+          <UserLanding setCategory={this.props.setCategory}
+            categoryList={this.props.categoryList} />
+        }
+
       </div>
     )
   }

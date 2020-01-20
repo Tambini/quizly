@@ -32,36 +32,22 @@ class UserLanding extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <h1>Let's Play</h1>
         <h3>click on any of the categories to enter the game</h3>
         <div className="button-wrapper">
-          <Link to='/gameboard'>
-            <button className="button1" >Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button2">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button3">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button4">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button5">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button6">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button7">Category</button>
-          </Link>
-          <Link to='/gameboard'>
-            <button className="button8">Category</button>
-          </Link>
+          {this.props.categoryList.map((category, key) => (
+            <div key={key}>
+              <Link to='/gameboard'>
+                <button className={`button${key + 1}`} onClick={(e) => {
+
+                  this.props.setCategory(category.category)
+                }
+                }>{category.category}</button>
+              </Link>
+            </div>
+          ))}
         </div>
 
         <form className="question-form"
@@ -82,7 +68,7 @@ class UserLanding extends Component {
               <option value="animals"> Animals</option>
               <option value="science"> science</option>
               <option value="history">History</option>
-              <option value="studpid_answer"> Stupid aswers</option>
+              <option value="studpid%20answer"> Stupid aswers</option>
               <option value="Around%20the%20World" > Around the world</option>
             </select>
           </div>

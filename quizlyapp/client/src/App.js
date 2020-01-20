@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Link } from 'react-router-dom';
 
 // custom api helper
-import { loginUser, registerUser, verifyUser, getAdmins } from './services/api_helper';
+import { loginUser, registerUser, verifyUser, getAdmins, getTriviaCategories } from './services/api_helper';
 
 // custom components
 import Login from './components/Login';
@@ -24,6 +24,7 @@ class App extends React.Component {
       currentUser: null,
       errorText: '',
       category: 'animals',
+      categoryList: [],
       admin: false
     }
   }
@@ -101,10 +102,24 @@ class App extends React.Component {
     localStorage.removeItem('authToken');
   }
 
+  setCategory = (category) => {
+    this.setState({
+      category
+    })
+  }
+
+  setCategoryList = async () => {
+    const categoryList = await getTriviaCategories();
+    this.setState({
+      categoryList
+    })
+  }
+
   componentDidMount = async () => {
     await this.handleVerify();
     if (this.state.currentUser !== null && this.state.currentUser.username)
       this.checkForAdmin();
+    await this.setCategoryList();
   }
 
   render() {
@@ -123,6 +138,8 @@ class App extends React.Component {
             <Login
               handleLogin={this.handleLogin}
               currentUser={this.state.currentUser}
+              setCategory={this.setCategory}
+              categoryList={this.state.categoryList}
             />
           </div>
         )} />
@@ -132,6 +149,8 @@ class App extends React.Component {
             <Register
               handleRegister={this.handleRegister}
               currentUser={this.state.currentUser}
+              setCategory={this.setCategory}
+              categoryList={this.state.categoryList}
             />
           </div>
         )} />
@@ -141,25 +160,29 @@ class App extends React.Component {
             <p className="error">{this.state.errorText}</p>}
         </div>
 
-        <main>
-          <Route path="/guest-landing" render={() =>
-            <GuestLanding />} />
+        <Route path="/guest-landing" render={() =>
+          <GuestLanding
+            setCategory={this.setCategory}
+            categoryList={this.state.categoryList}
+          />} />
 
-          <Route path="/user-landing" render={() =>
-            <UserLanding />} />
+        <Route path="/user-landing" render={() =>
+          <UserLanding
+            setCategory={this.setCategory}
+            categoryList={this.state.categoryList} />
+        } />
 
-          {this.state.admin &&
-            <Route path="/admin-landing" render={() => <AdminLanding />} />
-          }
-          
-          <Route path="/gameboard" render={() => (
-            <div>
-              <GameBoard
-                category={this.state.category} />
-            </div>
-          )} />
+        {
+          this.state.admin &&
+          <Route path="/admin-landing" render={() => <AdminLanding />} />
+        }
 
-        </main>
+        < Route path="/gameboard" render={() => (
+          <div>
+            <GameBoard
+              category={this.state.category} />
+          </div>
+        )} />
 
         <Footer />
 

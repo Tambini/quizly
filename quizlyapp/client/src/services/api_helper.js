@@ -93,3 +93,8 @@ export const deleteTrivia = async (id) => {
   const trivia = await api.delete(`/trivia/${id}`);
   return trivia.data;
 }
+
+export const getTriviaCategories = async () => {
+  const categories = await api.get('/trivia/category');
+  return categories.data;
+}
