@@ -14,6 +14,7 @@ class UserLanding extends Component {
       option3: "",
       category: "",
       value: "",
+      approved: false
     }
   }
 
