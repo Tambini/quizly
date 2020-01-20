@@ -264,7 +264,7 @@ const seed = async () => {
       option3: "28",
       question: "Number of different basic shapes in a box of Post Alpha-Bits",
       value: 200,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -274,7 +274,7 @@ const seed = async () => {
       option3: "6.5",
       question: "Whole number equidistant from 5 & 7",
       value: 400,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -284,7 +284,7 @@ const seed = async () => {
       option3: "Benjamin Franklin",
       question: "President the Hoover Dam is named after",
       value: 100,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -294,7 +294,7 @@ const seed = async () => {
       option3: "Small Farm",
       question: "This group's 1st big U.S. hit was 'In a Big Country'",
       value: 400,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -304,7 +304,7 @@ const seed = async () => {
       option3: "Confederacy",
       question: "Word emblazoned in large letters in the center of the seal of Huntsville, Alabama",
       value: 500,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -314,7 +314,7 @@ const seed = async () => {
       option3: "Springfield",
       question: "Town in S.D. that put up 9' statue of Fr. Pierre Jean De Smet, who died in 1873 & never visited the town",
       value: 400,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -324,7 +324,7 @@ const seed = async () => {
       option3: "Kanchenjunga",
       question: "It initially got its name from being the second Karakoram peak to be measured",
       value: 500,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -334,7 +334,7 @@ const seed = async () => {
       option3: "Encarta",
       question: "Begun in 1829, it was the 1st encyclopedia published in America",
       value: 500,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -344,7 +344,7 @@ const seed = async () => {
       option3: "The Mayflower Hotel",
       question: "Name of the hotel & office complex where the Watergate break-in occurred",
       value: 200,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -354,7 +354,7 @@ const seed = async () => {
       option3: "Jacksonville",
       question: "2 Civil War forts were built on this western island of the Florida Keys",
       value: 400,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
@@ -364,7 +364,7 @@ const seed = async () => {
       option3: "Michaels",
       question: "In June 1997 this Chicago department store marshalled its forces for a 'Field Days Sale'",
       value: 500,
-      category: "stupid_answers",
+      category: "stupid answers",
       approved: true
     },
     {
