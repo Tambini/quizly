@@ -154,7 +154,7 @@ button.register-box, button.login-box, button.guest-box {
   padding: 100px;
   font-weight: bolder;
   border-radius: 10px;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
 }
 
@@ -201,43 +201,69 @@ h3{
 }
 
 .gameboard-score{
-font-size:30px;
-font-weight:bold; 
+font-size:25px;
+max-width: 50px;
+color:#551A8B;
+font-weight: 900;
+text-align: center;
+font-family: 'Montserrat', sand-serif;
+background-image: url("./assets/purple-circle.png")
 }
 
 .question-counter{
-  font-size:20px;
+  font-size:25px;
+  width: 100px;
+  text-align: center;
+  color:#551A8B;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .question-category{
   font-size:20px;
 }
 
-.question-question{
+.question-question {
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
   text-align:left;
   font-weight:bold;
-  border: 1px solid red;
 }
+.next-question{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 50px;
+  
+}
+.next-question button{
+  background-color: #46178F;
+  padding:20px;
+  margin: 20px;
+}
+
 
 .question-answer-options{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width:100%;
-  border: 1px solid black;
+  
 }
 
 .question-option{
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     line-height: 30px;
     padding: 50px;
     width: 100%;
-    margin:10px;
-    border: 1px solid blue;
+   margin:10px;
+}
+.game-stats{
+  display: flex;
+  justify-content: space-between;
 }
 
 .button-answer0, .button-answer1, .button-answer2, .button-answer3 {
@@ -246,21 +272,24 @@ font-weight:bold;
 
 .button-answer0 button{ 
   background-color: #23882B;
-  width: 100%
+  width: 100%;
+
 }
 .button-answer1 button{ 
   background-color: #E11C3D;
-  width: 100%
+  width: 100%;
+ 
 }
 .button-answer2 button{ 
   background-color: #1C65AD;
-  width: 100%
+  width: 100%;
+ 
 }
 .button-answer3 button{ 
   background-color: #F79353;
-  width: 100%
+  width: 100%;
+ 
 }
 
-.next-question{
-  border: 3px solid purple;
-}
+
+

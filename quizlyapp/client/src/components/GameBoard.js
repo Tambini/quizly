@@ -127,10 +127,10 @@ class GameBoard extends Component {
       <div className="gameboard">
         <div className="game-stats">
           <div className="gameboard-score">
-            Score: {this.state.scoreTotal}
+            {this.state.scoreTotal} Score
           </div>
           <div className="question-counter">
-            Question #: {this.state.questionCounter}
+            {this.state.questionCounter} Question
           </div>
         </div>
 
@@ -151,8 +151,9 @@ class GameBoard extends Component {
         {
           this.state.showNextQuestionButton &&
           <div className="next-question">
-            {this.state.message}
+            <div> {this.state.message}</div>
             <button onClick={this.showNext}>NEXT QUESTION</button>
+
           </div>
         }
         {
