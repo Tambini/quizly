@@ -40,9 +40,9 @@ class App extends React.Component {
       const currentUser = await loginUser(loginData);
       this.setState({
         currentUser,
-        errorText: '',
-        admin: true
+        errorText: ''
       })
+      this.checkForAdmin();
     }
   }
 
@@ -117,10 +117,10 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     await this.handleVerify();
-    if (this.state.currentUser !== null && this.state.currentUser.username)
-      this.checkForAdmin();
     await this.setCategoryList();
   }
+
+
 
   render() {
     return (
@@ -140,6 +140,7 @@ class App extends React.Component {
               currentUser={this.state.currentUser}
               setCategory={this.setCategory}
               categoryList={this.state.categoryList}
+              admin={this.state.admin}
             />
           </div>
         )} />
@@ -172,12 +173,13 @@ class App extends React.Component {
             categoryList={this.state.categoryList} />
         } />
 
-        {
-          this.state.admin &&
-          <Route path="/admin-landing" render={() => <AdminLanding />} />
+        {this.state.admin &&
+          <Route path="/admin-landing" render={() =>
+            <AdminLanding />
+          } />
         }
 
-        < Route path="/gameboard" render={() => (
+        <Route path="/gameboard" render={() => (
           <div>
             <GameBoard
               category={this.state.category} />
