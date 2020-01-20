@@ -40,9 +40,9 @@ class App extends React.Component {
       const currentUser = await loginUser(loginData);
       this.setState({
         currentUser,
-        errorText: '',
-        admin: true
+        errorText: ''
       })
+      this.checkForAdmin();
     }
   }
 
@@ -117,8 +117,8 @@ class App extends React.Component {
 
   componentDidMount = async () => {
     await this.handleVerify();
-    if (this.state.currentUser !== null && this.state.currentUser.username)
-      this.checkForAdmin();
+    // if (this.state.currentUser !== null && this.state.currentUser.username)
+    //   this.checkForAdmin();
     await this.setCategoryList();
   }
 
