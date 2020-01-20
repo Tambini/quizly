@@ -159,7 +159,7 @@ class App extends React.Component {
         <Route path="/guest-landing" render={() =>
           <GuestLanding
             setCategory={this.setCategory}
-            categoryList={this.categoryList}
+            categoryList={this.state.categoryList}
           />} />
 
         <Route path="/user-landing" render={() =>
