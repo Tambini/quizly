@@ -82,7 +82,7 @@ class UserLanding extends Component {
               <option value="animals"> Animals</option>
               <option value="science"> science</option>
               <option value="history">History</option>
-              <option value="studpid_answer"> Stupid aswers</option>
+              <option value="studpid%20answer"> Stupid aswers</option>
               <option value="Around%20the%20World" > Around the world</option>
             </select>
           </div>
