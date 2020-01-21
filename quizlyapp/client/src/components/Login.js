@@ -21,8 +21,11 @@ export default class Login extends Component {
     })
   }
 
+  componentDidMount = async () => {
+    // this.props.checkForAdmin();
+  }
+
   render() {
-    console.log(this.props.admin)
 
     if (!this.props.currentUser) {
       return (
@@ -56,8 +59,11 @@ export default class Login extends Component {
         )
       } else if (this.props.currentUser && this.props.admin) {
         return (
-          <AdminLanding setCategory={this.props.setCategory}
-            categoryList={this.props.categoryList} />
+          <AdminLanding
+            setCategory={this.props.setCategory}
+            categoryList={this.props.categoryList}
+            checkForAdmin={this.checkForAdmin}
+          />
         )
       }
     }

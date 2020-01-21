@@ -120,8 +120,6 @@ class App extends React.Component {
     await this.setCategoryList();
   }
 
-
-
   render() {
     return (
       <div className="App" >
@@ -141,6 +139,7 @@ class App extends React.Component {
               setCategory={this.setCategory}
               categoryList={this.state.categoryList}
               admin={this.state.admin}
+              checkForAdmin={this.checkForAdmin}
             />
           </div>
         )} />
@@ -173,16 +172,26 @@ class App extends React.Component {
             categoryList={this.state.categoryList} />
         } />
 
-        {this.state.admin &&
+        {this.state.admin && // this is non functional right now instead using the conditional rendering in login
           <Route path="/admin-landing" render={() =>
-            <AdminLanding />
+            <AdminLanding
+            />
           } />
         }
 
         <Route path="/gameboard" render={() => (
           <div>
-            <GameBoard
-              category={this.state.category} />
+            {this.state.currentUser ?
+              <GameBoard
+                category={this.state.category}
+                username={this.state.currentUser.username}
+              />
+              :
+              <GameBoard
+                category={this.state.category}
+                username="guest"
+              />
+            }
           </div>
         )} />
 
