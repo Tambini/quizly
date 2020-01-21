@@ -45,7 +45,7 @@ body {
   text-align: justify;
 }
 
-input {
+input[type=text], input[type=password]{
   width: 200px;
   padding: 10px;
   background-color: rgba(244, 242, 242, 0.235);
@@ -55,7 +55,7 @@ input {
   outline: 1px solid rgba(255, 255, 255, 0);
 }
 
-input[type=submit] {
+button, input[type=submit] {
   background-color: rgb(76, 129, 175); 
   border: none;
   color: white;
@@ -64,6 +64,7 @@ input[type=submit] {
   display: inline-block;
   font-size: 16px;
   min-width: 100px;
+  border-radius: 10px;
 }
 
 button {
@@ -71,6 +72,10 @@ button {
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
+  background-color: rgb(76, 129, 175); 
+  padding: 10px;
+  min-width: 100px;
+  border-radius: 10px;
 }
 
 .welcome-message p {
@@ -83,7 +88,7 @@ button {
 .logout-button {
   padding: 10px;
   font-size: 16px;
-  max-width: 50px;
+  width: 100px;
   background-color: rgba(208, 208, 208, 0.386);
   color: rgb(82, 82, 82);
   font-weight: 500;
@@ -255,20 +260,14 @@ font-family: 'Montserrat', sand-serif;
   margin: 50px;
 }
 
-.next-question button{
+.next-question button, .score-button, .play-button{
   background-color: #46178F;
   padding:20px;
   margin: 20px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  align-items: center
 }
-
-.play{
-  background-color: #46178F;
-  padding:20px;
-  margin: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
 
 .question-answer-options{
   display: flex;
@@ -316,5 +315,29 @@ font-family: 'Montserrat', sand-serif;
   width: 100%;
 }
 
+.score{
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size:  40px;
+  font-weight: 600;
+  color:white;
+}
 
+.score-number, .score-score, .score-name{
+  padding: 20px;
+}
 
+.score-list{
+  background-color: #46178F;
+  padding: 30px;
+}
+
+.score-title{
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+  margin:5px;
+  text-decoration: underline overline dotted white;
+}

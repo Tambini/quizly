@@ -34,19 +34,18 @@ export default class ScoreList extends React.Component {
     console.log(this.state.scores)
     return (
       <div className="score-list">
-
+        <h1 className="score-title"> Top Scores</h1>
         {this.state.scoresLoaded &&
-
           this.state.scores.map((score, key) => (
             <div key={key} className="score">
               <div className="score-number">
                 {key + 1}
               </div>
-              <div className="score-name">
-                {score.username}
-              </div>
               <div className="score-score">
                 {score.score}
+              </div>
+              <div className="score-name">
+                {score.username}
               </div>
             </div>
           ))
