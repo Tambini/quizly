@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 const Header = (props) => {
   return (
     <div>
+
+      {props.currentUser &&
+        <div className="logout-wrapper">
+          <button className="logout-button" onClick={props.handleLogout}>Logout</button>
+        </div>
+      }
+        
       <header>
         <Link to='/login'>
           <h1>Quizly</h1>
@@ -14,7 +21,6 @@ const Header = (props) => {
       <div className="homepage-options-form-wrapper">
         {props.currentUser ?
           <div className="welcome-message">
-            <button className="logout-button" onClick={props.handleLogout}>Logout</button>
             <h4>Hello, <span>{props.currentUser.username}</span>! Let's play!</h4>
           </div>
           :

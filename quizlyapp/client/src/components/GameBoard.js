@@ -142,10 +142,10 @@ class GameBoard extends Component {
       <div className="gameboard">
         <div className="game-stats">
           <div className="gameboard-score">
-            {this.state.scoreTotal} {this.state.scoreMessage}
+            {this.state.scoreMessage} {this.state.scoreTotal} 
           </div>
           <div className="question-counter">
-            {this.state.questionCounter} / 10 Question
+            Question {this.state.questionCounter} / 10 
           </div>
         </div>
 
