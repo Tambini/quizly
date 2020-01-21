@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 //custom api helper
 import { getAllTrivia, getTriviaByCategory, addNewScore } from '../services/api_helper';
 
+import { Link } from 'react-router-dom'
+
 //custom components
 import Question from './Question';
 import ScoreList from './ScoreList'
@@ -22,7 +24,9 @@ class GameBoard extends Component {
       questionsLoaded: false,
       showNextQuestionButton: false,
       gameOver: false,
-      showScores: false
+      showScores: false,
+      questionsCorrect: 0,
+      scoreMessage: 'Score'
     }
   }
 
@@ -46,7 +50,7 @@ class GameBoard extends Component {
   }
 
   getRandomQuestion = () => {
-    if (this.state.questionArray.length > 0) {
+    if (this.state.questionArray.length > 0 && this.state.questionCounter < 9) {
       let randomIndex = Math.floor(Math.random() * this.state.questionArray.length);
       let tempQuestionArray = this.state.questionArray.slice(0);
       let currentQuestion = tempQuestionArray.splice(randomIndex, 1); //I beleive splice mutates the array so it must be performed on a temp array and resaved into sate after.
@@ -59,7 +63,8 @@ class GameBoard extends Component {
     } else {
       this.setState({
         gameOver: true,
-        showNextQuestionButton: false
+        showNextQuestionButton: false,
+        scoreMessage: 'Final Score'
       })
 
     }
@@ -85,6 +90,7 @@ class GameBoard extends Component {
     if (playerChosenOption[0] === this.state.currentQuestion.answer) {
       this.setState({
         scoreTotal: this.state.scoreTotal + this.state.currentQuestion.value,
+        questionsCorrect: this.state.questionsCorrect + 1,
         message: `You got the answer right! ${this.state.currentQuestion.value} points added to your score.`,
         questionCounter: this.state.questionCounter + 1,
         showNextQuestionButton: true
@@ -128,10 +134,10 @@ class GameBoard extends Component {
       <div className="gameboard">
         <div className="game-stats">
           <div className="gameboard-score">
-            {this.state.scoreTotal} Score
+            {this.state.scoreTotal} {this.state.scoreMessage}
           </div>
           <div className="question-counter">
-            {this.state.questionCounter} Question
+            {this.state.questionCounter} / 10 Question
           </div>
         </div>
 
@@ -161,9 +167,8 @@ class GameBoard extends Component {
         {
           this.state.gameOver && !this.state.showScores &&
 
-          <div>
-            {/* {this.submitPlayerScore(this.state.scoreTotal)}; */}
-            <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
+          <div className="gameboard-final">
+            <div>{this.state.questionsCorrect} / {this.state.questionCounter} Questions correctly answered!</div>
             <button className="score-button" onClick={async () => {
               await this.submitPlayerScore(this.state.scoreTotal);
               this.showScores();
@@ -174,6 +179,15 @@ class GameBoard extends Component {
           this.state.showScores &&
           <div>
             <ScoreList />
+            {this.props.username === "Guest" ?
+              <Link to='/guest-landing'>
+                <button>Play another!</button>
+              </Link>
+              :
+              <Link to='/login'>
+                <button>Play another!</button>
+              </Link>
+            }
           </div>
         }
 

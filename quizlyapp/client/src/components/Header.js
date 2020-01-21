@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <div>
       <header>
-        <Link to='/'>
+        <Link to='/login'>
           <h1>Quizly</h1>
         </Link>
       </header>

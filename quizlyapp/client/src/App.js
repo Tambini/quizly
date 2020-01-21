@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route, Link } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 
 // custom api helper
 import { loginUser, registerUser, verifyUser, getAdmins, getTriviaCategories } from './services/api_helper';
@@ -46,9 +46,6 @@ class App extends React.Component {
         this.checkForAdmin();
       }
     } catch (e) {
-      if (e.status === '401') {
-        console.log("401401401401401");
-      }
       console.error(e);
     }
   }
@@ -92,14 +89,10 @@ class App extends React.Component {
     )
 
     if (admin.length > 0) {
-      // console.log("checkForAdmin admin: " + admin.length + " " + admin[0].username)
-      // console.log("checkForAdmin currentUser: " + this.state.currentUser.username)
-      // console.log("YOU ARE ADMIN")
       this.setState({
         admin: true
       })
     } else {
-      // console.log("YOU ARE NOT ADMIN")
       this.setState({
         admin: false
       })
@@ -129,6 +122,7 @@ class App extends React.Component {
   }
 
   componentDidMount = async () => {
+    this.props.history.push('/login')
     await this.handleVerify();
     await this.setCategoryList();
   }
@@ -185,7 +179,7 @@ class App extends React.Component {
             categoryList={this.state.categoryList} />
         } />
 
-        {this.state.admin && // this is non functional right now instead using the conditional rendering in login
+        {this.state.admin &&
           <Route path="/admin-landing" render={() =>
             <AdminLanding
             />
@@ -202,7 +196,7 @@ class App extends React.Component {
               :
               <GameBoard
                 category={this.state.category}
-                username="guest"
+                username="Guest"
               />
             }
           </div>
@@ -215,4 +209,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);
