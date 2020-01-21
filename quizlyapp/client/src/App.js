@@ -32,17 +32,24 @@ class App extends React.Component {
   // login
   handleLogin = async (e, loginData) => {
     e.preventDefault();
-    if (!loginData.username || !loginData.password) {
-      this.setState({
-        errorText: 'You must supply a username AND password'
-      })
-    } else {
-      const currentUser = await loginUser(loginData);
-      this.setState({
-        currentUser,
-        errorText: ''
-      })
-      this.checkForAdmin();
+    try {
+      if (!loginData.username || !loginData.password) {
+        this.setState({
+          errorText: 'You must supply a username AND password'
+        })
+      } else {
+        const currentUser = await loginUser(loginData);
+        this.setState({
+          currentUser,
+          errorText: ''
+        })
+        this.checkForAdmin();
+      }
+    } catch (e) {
+      if (e.status === '401') {
+        console.log("401401401401401");
+      }
+      console.error(e);
     }
   }
 
