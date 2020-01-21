@@ -147,7 +147,6 @@ class GameBoard extends Component {
                 optionArray={this.state.optionArray}
                 optionSelected={this.optionSelected}
                 questionCounter={this.state.questionCounter} Question
-
               />
             </div>
         }
