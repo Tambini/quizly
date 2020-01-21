@@ -51,7 +51,7 @@ class App extends React.Component {
     e.preventDefault();
     if (!registerData.username || !registerData.password) {
       this.setState({
-        errorText: 'You must supply a username AND password ya animal'
+        errorText: 'You must supply a username AND password'
       })
     } else {
       const currentUser = await registerUser(registerData);
