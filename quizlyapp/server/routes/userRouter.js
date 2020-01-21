@@ -59,14 +59,22 @@ userRouter.post('/register', async (req, res, next) => { // check if user alread
   try {
     const password_digest = await hashPassword(req.body.password);
     const username = req.body.username; // const { username } = req.body;
-    const user = await User.create({
-      username,
-      password_digest,
-      admin: req.body.admin
-    });
-
-    const respData = buildAuthResponse(user);
-    res.json(respData);
+    const usernameExist = await User.findOne({
+      where: {
+        username: req.body.username
+      }
+    })
+    if (usernameExist) {
+      res.send("EXISTS");
+    } else {
+      const user = await User.create({
+        username,
+        password_digest,
+        admin: req.body.admin
+      });
+      const respData = buildAuthResponse(user);
+      res.json(respData);
+    }
   } catch (err) {
     next(err);
   }
