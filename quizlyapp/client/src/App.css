@@ -265,17 +265,28 @@ footer {
   border-radius: 10px;
 }
 
-.custom-select {
-  padding: 20px;
-  font-size: 20px;
-}
-
 .question-form-wrapper input[type=text] {
-  min-width: 400px;
+  width: 50vw;
 }
 
 .cancel-button {
   background-color: rgb(213, 91, 91);
+}
+
+.custom-select {
+  padding: 20px;
+  font-size: 20px;
+  
+}
+
+.submit-question-button {
+margin: 50px auto;
+display: flex;
+text-align: center;
+align-items: center;
+justify-items: center;
+align-content: center;
+justify-content: center;
 }
 
 .gameboard-score{
