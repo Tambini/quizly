@@ -14,8 +14,8 @@ const Header = (props) => {
       <div className="homepage-options-form-wrapper">
         {props.currentUser ?
           <div className="welcome-message">
-            <p>Hello, {props.currentUser.username}!</p>
             <button className="logout-button" onClick={props.handleLogout}>Logout</button>
+            <h4>Hello, <span>{props.currentUser.username}</span>! Let's play!</h4>
           </div>
           :
           <div className="homepage-options-form-wrapper">

@@ -23,7 +23,7 @@ export default class Register extends Component {
         {!this.props.currentUser &&
           <div className="register-form-wrapper">
             <form className="register-form" onSubmit={(e) => this.props.handleRegister(e, { username: this.state.username, password: this.state.password })}>
-            <h2>Register</h2>
+            <h4>Register</h4>
             
               <input
               type="text"

@@ -25,7 +25,7 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  padding: 5px 0 20px 0;
+  padding: 5px 0 30px 0;
   margin: 10px;
   border: 1px solid rgb(176, 176, 176);
   border-radius: 5px;
@@ -33,7 +33,7 @@ body {
   align-items: center;
   align-content: center;
   border: 1px solid rgb(160, 160, 160, 0.5); 
-  box-shadow: 1px 1px 5px 1px #cbcbcb
+  box-shadow: 1px 1px 5px 1px #cbcbcb;
 }
 
 .login-form, .register-form {
@@ -46,36 +46,44 @@ body {
 }
 
 input[type=text], input[type=password]{
-  width: 200px;
+  width: 180px;
   padding: 10px;
   background-color: rgba(244, 242, 242, 0.235);
   margin: 10px;
   border: 1px solid rgb(160, 160, 160, 0.5); 
   border-radius: 10px;
   outline: 1px solid rgba(255, 255, 255, 0);
+  font-size: 16px;
 }
 
-button, input[type=submit] {
-  background-color: rgb(76, 129, 175); 
-  border: none;
-  color: white;
+input[type=submit] {
+  width: 200px;
   padding: 10px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  min-width: 100px;
+  background-color: rgb(76, 129, 175); 
+  margin: 10px;
+  border: none;
   border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; 
+  margin: 5px 0 20px 0;
 }
 
 button {
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-  text-decoration: none;
-  background-color: rgb(76, 129, 175); 
+  width: 200px;
   padding: 10px;
-  min-width: 100px;
+  background-color: rgb(76, 129, 175); 
+  margin: 10px;
+  border: none;
   border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; 
+  margin: 5px 0 20px 0;
 }
 
 .welcome-message p {
@@ -95,12 +103,6 @@ button {
   margin: 5px auto 30px auto;
 }
 
-h2, h4 {
-  text-align: center;
-  font-family: 'Satisfy', cursive;
-  color: rgb(90, 93, 99); 
-}
-
 label {
   text-align: center;
   color: rgb(73, 76, 82); 
@@ -116,9 +118,12 @@ img {
 }
 
 .button-wrapper{
-  display:flex;  
+  display: flex;  
   flex-wrap: wrap;
-  margin: auto;
+  flex-direction: initial;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .homepage-options-form-wrapper, .homepage-options-form-wrapper a {
@@ -164,12 +169,13 @@ button.register-box, button.login-box, button.guest-box {
 }
 
 .button1, .button2, .button3, .button4, .button5, .button6, .button7, .button8 {
-  width: 350px;
-  margin: 15px;
-  padding: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 50px;
   border-radius: 10px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Montserrat', sand-serif;
   font-weight: 600;
 }
@@ -206,16 +212,38 @@ button.register-box, button.login-box, button.guest-box {
   background-color: #46178F; 
 }
 
-h1{
+h1 {
   font-size: 50px;
   text-align: center;
   color:#46178F;
 }
 
-h3{
+h2 {
+font-size: 30px;
+margin: 0 auto;
+text-align: center;
+}
+
+h3 {
   font-weight: lighter;
   font-size: 20px;
   text-align: center;
+}
+
+h4 {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Montserrat', sand-serif;
+  color: rgb(90, 93, 99); 
+}
+
+footer {
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  color: rgb(117, 121, 130); 
 }
 
 .question-form{
@@ -340,4 +368,8 @@ font-family: 'Montserrat', sand-serif;
   font-weight:200;
   margin:5px;
   text-decoration: underline overline dotted white;
+}
+
+span {
+  color: rgb(100, 49, 159);
 }
