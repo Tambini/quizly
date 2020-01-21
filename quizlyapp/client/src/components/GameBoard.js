@@ -137,7 +137,7 @@ class GameBoard extends Component {
 
         {//if questions are not loaded and game isnt over, show play button, otherwise show the question/answer options
           !this.state.currentQuestion && !this.state.gameOver ?
-            <button className="play" onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
+            <button className="play-button" onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
             :
             !this.state.showNextQuestionButton && !this.state.gameOver &&
             <div>
@@ -146,7 +146,7 @@ class GameBoard extends Component {
                 question={this.state.currentQuestion}
                 optionArray={this.state.optionArray}
                 optionSelected={this.optionSelected}
-                questionCounter={this.state.questionCounter} Question
+                questionCounter={this.state.questionCounter}
               />
             </div>
         }
@@ -164,7 +164,7 @@ class GameBoard extends Component {
           <div>
             {/* {this.submitPlayerScore(this.state.scoreTotal)}; */}
             <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
-            <button onClick={async () => {
+            <button className="score-button" onClick={async () => {
               await this.submitPlayerScore(this.state.scoreTotal);
               this.showScores();
             }}>See High Scores!</button>

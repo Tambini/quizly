@@ -255,19 +255,16 @@ font-family: 'Montserrat', sand-serif;
   margin: 50px;
 }
 
-.next-question button{
+.next-question button, .score-button, .play-button{
   background-color: #46178F;
   padding:20px;
   margin: 20px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  align-items: center
 }
 
-.play{
-  background-color: #46178F;
-  padding:20px;
-  margin: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
+
 
 
 .question-answer-options{
@@ -317,4 +314,29 @@ font-family: 'Montserrat', sand-serif;
 }
 
 
+.score{
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size:  40px;
+  font-weight: 600;
+  color:white;
+}
 
+.score-number, .score-score, .score-name{
+  padding: 20px;
+}
+
+.score-list{
+  background-color: #46178F;
+  padding: 30px;
+}
+
+.score-title{
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+  margin:5px;
+  text-decoration: underline overline dotted white;
+}
