@@ -55,18 +55,22 @@ input {
   outline: 1px solid rgba(255, 255, 255, 0);
 }
 
-button, input[type=submit] {
+input[type=submit] {
   background-color: rgb(76, 129, 175); 
   border: none;
   color: white;
   padding: 10px;
   text-align: center;
-  text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  min-width: 100px;
+}
+
+button {
+  color: white;
   cursor: pointer;
   border-radius: 5px;
-  min-width: 100px;
+  text-decoration: none;
 }
 
 .welcome-message p {
