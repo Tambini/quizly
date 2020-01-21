@@ -13,9 +13,13 @@ export const loginUser = async (loginData) => {
 
 export const registerUser = async (registerData) => {
   const resp = await api.post('/users/register', registerData);
-  localStorage.setItem('authToken', resp.data.token);
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
-  return resp.data.user;
+  if (resp.data === "EXISTS") {
+    return resp.data;
+  } else {
+    localStorage.setItem('authToken', resp.data.token);
+    api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+    return resp.data.user;
+  }
 }
 
 export const verifyUser = async () => {
