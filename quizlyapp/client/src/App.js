@@ -55,10 +55,16 @@ class App extends React.Component {
       })
     } else {
       const currentUser = await registerUser(registerData);
-      this.setState({
-        currentUser,
-        errorText: ''
-      })
+      if (currentUser === "EXISTS") {
+        this.setState({
+          errorText: 'Username taken, please choose another.'
+        });
+      } else {
+        this.setState({
+          currentUser,
+          errorText: ''
+        });
+      }
     }
   }
 
