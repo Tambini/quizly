@@ -31,7 +31,7 @@ export default class Login extends Component {
       return (
         <div className="login-form-wrapper">
           <form className="login-form" onSubmit={(e) => this.props.handleLogin(e, { username: this.state.username, password: this.state.password })}>
-            <h2>Login</h2>
+            <h4>Login</h4>
 
             <input
               type="text"

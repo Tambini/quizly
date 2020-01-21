@@ -15,8 +15,7 @@ class GuestLanding extends Component {
   render() {
     return (
       <div>
-        <h1>Let's Play</h1>
-        <h3>click on any of the categories to enter the game</h3>
+        <h3>Click on any of the categories to enter the game:</h3>
         <div className="button-wrapper">
           {this.props.categoryList.map((category, key) => ( //mapping through the array of categories ( which happen to be objects, so like {category: animals} )
             <div key={key}>

@@ -6,8 +6,7 @@ import TriviaForm from './TriviaForm';
 function UserLanding(props) {
   return (
     <div>
-      <h1>Let's Play</h1>
-      <h3>click on any of the categories to enter the game</h3>
+      <h3>Click on any of the categories to enter the game:</h3>
       <div className="button-wrapper">
         {props.categoryList.map((category, key) => (
           <div key={key}>
