@@ -41,26 +41,32 @@ export default class TriviaForm extends Component {
     e.preventDefault();
     switch (this.props.apiCall) {
       case ("post"):
-        try {
-          await addNewTrivia({
-            answer: this.state.answer,
-            option1: this.state.option1,
-            option2: this.state.option2,
-            option3: this.state.option3,
-            question: this.state.question,
-            value: 100,
-            category: this.state.category,
-            approved: false
-          });
+        if (this.state.answer === '' || this.state.option1 === '' || this.state.option2 === '' || this.state.option3 === '' || this.state.category === '') {
           this.setState({
-            message: 'Successfully submitted trivia question for approval! Check back later to see if your question is added to the mix!',
-            showForm: false
+            message: 'You have to fill out the form completely.'
           })
-        } catch (e) {
-          console.error(e.message);
-          this.setState({
-            message: 'Trivia was not submitted successfully.'
-          })
+        } else {
+          try {
+            await addNewTrivia({
+              answer: this.state.answer,
+              option1: this.state.option1,
+              option2: this.state.option2,
+              option3: this.state.option3,
+              question: this.state.question,
+              value: 100,
+              category: this.state.category,
+              approved: false
+            });
+            this.setState({
+              message: 'Successfully submitted trivia question for approval! Check back later to see if your question is added to the mix!',
+              showForm: false
+            })
+          } catch (e) {
+            console.error(e.message);
+            this.setState({
+              message: 'Trivia was not submitted successfully.'
+            })
+          }
         }
         break;
       case ("put"):
@@ -168,21 +174,29 @@ export default class TriviaForm extends Component {
                 value={this.state.option3}
                 onChange={this.handleChange} />
               {this.props.apiCall !== 'post' &&
-                <input type="text"
-                  name="value"
-                  value={this.state.value}
-                  onChange={this.handleChange} />
+                <div>
+                  <label htmlFor="value"> value</label>
+                  <br />
+                  <input type="text"
+                    name="value"
+                    value={this.state.value}
+                    onChange={this.handleChange} />
+                </div>
               }
               {this.props.apiCall !== 'post' &&
-                <input type="text"
-                  name="approved"
-                  value={this.state.approved}
-                  onChange={this.handleChange} />
+                <div>
+                  <label htmlFor="approved"> approved</label>
+                  <br />
+                  <input type="text"
+                    name="approved"
+                    value={this.state.approved}
+                    onChange={this.handleChange} />
+                </div>
               }
               <input type="submit" />
             </form>
-            
-            
+
+
             {this.state.showCancelButton && <button className="cancel-button" onClick={(e) => {
               e.preventDefault();
               this.setState({
@@ -195,12 +209,13 @@ export default class TriviaForm extends Component {
           <button onClick={(e) => {
             e.preventDefault();
             this.setState({
-              showForm: true
+              showForm: true,
+              message: ''
             })
             }}>{this.state.buttonText}</button>
             </div>
         }
-        
+
 
 
       </div>

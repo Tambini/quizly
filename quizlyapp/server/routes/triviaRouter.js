@@ -3,10 +3,34 @@ const triviaRouter = Router();
 const { Trivia } = require('../models');
 const Sequelize = require('sequelize');
 
+const Op = Sequelize.Op
+
 //get all trivia index
 triviaRouter.get('/', async (req, res) => {
   try {
-    const trivia = await Trivia.findAll();
+    const trivia = await Trivia.findAll({
+      where: {
+        approved: true
+      }
+    });
+    res.json(trivia);
+  } catch (e) {
+    console.error(e);
+    res.json({ err: e.message });
+  }
+})
+
+
+//only difficult trivia
+triviaRouter.get('/difficult', async (req, res) => {
+  try {
+    const trivia = await Trivia.findAll({
+      where: {
+        value: {
+          [Op.gte]: 400
+        }
+      }
+    })
     res.json(trivia);
   } catch (e) {
     console.error(e);
@@ -20,7 +44,8 @@ triviaRouter.get('/category/:category', async (req, res) => {
     const category = req.params.category;
     const trivia = await Trivia.findAll({
       where: {
-        category
+        category,
+        approved: true
       }
     })
     res.json(trivia);
@@ -30,6 +55,7 @@ triviaRouter.get('/category/:category', async (req, res) => {
   }
 })
 
+//get all categories
 triviaRouter.get('/category', async (req, res) => {
   try {
     const categories = await Trivia.findAll({

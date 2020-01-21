@@ -98,7 +98,14 @@ export const deleteTrivia = async (id) => {
   return trivia.data;
 }
 
+//get only the list of categories
 export const getTriviaCategories = async () => {
   const categories = await api.get('/trivia/category');
   return categories.data;
+}
+
+//get all trivia over value 400
+export const getDifficultTrivia = async () => {
+  const trivia = await api.get('/trivia/difficult');
+  return trivia.data;
 }

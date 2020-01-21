@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 //custom api helper
-import { getAllTrivia, getTriviaByCategory, addNewScore } from '../services/api_helper';
+import { getDifficultTrivia, getAllTrivia, getTriviaByCategory, addNewScore } from '../services/api_helper';
 
 import { Link } from 'react-router-dom'
 
@@ -49,6 +49,15 @@ class GameBoard extends Component {
     })
   }
 
+  getAllDifficultTrivia = async () => {
+    const questionArray = await getDifficultTrivia();
+
+    this.setState({
+      questionArray,
+      questionsLoaded: true
+    })
+  }
+
   getRandomQuestion = () => {
     if (this.state.questionArray.length > 0 && this.state.questionCounter < 9) {
       let randomIndex = Math.floor(Math.random() * this.state.questionArray.length);
@@ -66,9 +75,7 @@ class GameBoard extends Component {
         showNextQuestionButton: false,
         scoreMessage: 'Final Score'
       })
-
     }
-
   }
 
   jumbleCurrentAnswers = (cq) => {
@@ -123,13 +130,14 @@ class GameBoard extends Component {
   }
 
   componentDidMount = async () => { //if category is passed as a prop get only those questions, otherwise get all questions.
-    this.props.category ?
-      await this.getAllCategoryQuestions(this.props.category) :
-      await this.getAllQuestions()
+    this.props.category === 'All Categories' ?
+      await this.getAllQuestions() :
+      this.props.category === 'Only Difficult Questions' ?
+        await this.getAllDifficultTrivia() :
+        await this.getAllCategoryQuestions(this.props.category)
   }
 
   render() {
-    console.log(this.props.username);
     return (
       <div className="gameboard">
         <div className="game-stats">
