@@ -163,11 +163,11 @@ class GameBoard extends Component {
           this.state.gameOver && !this.state.showScores &&
 
           <div>
-            {this.submitPlayerScore(this.state.scoreTotal)};
-          <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
+            {/* {this.submitPlayerScore(this.state.scoreTotal)}; */}
+            <h2>OUT OF QUESTIONS FOR NOW TY FOR TESTING</h2>
             <button onClick={async () => {
+              await this.submitPlayerScore(this.state.scoreTotal);
               this.showScores();
-              // await this.submitPlayerScore(this.state.scoreTotal);
             }}>See High Scores!</button>
           </div>
         }
