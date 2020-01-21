@@ -1,5 +1,6 @@
 body {
   background-color: rgb(203, 203, 203);
+  border: 0;
 }
 
 .error {
@@ -19,21 +20,12 @@ body {
   align-items: center;
 }
 
-.login-form, .register-form {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  max-width: 300px;
-  align-items: center;
-  text-align: justify;
-}
-
 .login-form-wrapper, .register-form-wrapper {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: white;
-  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 0 20px 0;
   margin: 10px;
   border: 1px solid rgb(176, 176, 176);
   border-radius: 5px;
@@ -44,10 +36,23 @@ body {
   box-shadow: 1px 1px 5px 1px #cbcbcb
 }
 
+.login-form, .register-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 300px;
+  align-items: center;
+  text-align: justify;
+}
+
 input {
   width: 200px;
   padding: 10px;
+  background-color: rgba(244, 242, 242, 0.235);
   margin: 10px;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  border-radius: 10px;
+  outline: 1px solid rgba(255, 255, 255, 0);
 }
 
 button, input[type=submit] {
@@ -104,8 +109,7 @@ img {
 .button-wrapper{
   display:flex;  
   flex-wrap: wrap;
-  margin:auto;
-  
+  margin: auto;
 }
 
 .homepage-options-form-wrapper, .homepage-options-form-wrapper a {
@@ -147,6 +151,7 @@ img {
 
 button.register-box, button.login-box, button.guest-box {
   font-size: 20px;
+  outline: 1px solid rgba(255, 255, 255, 0);
 }
 
 .button1, .button2, .button3, .button4, .button5, .button6, .button7, .button8 {
@@ -163,27 +168,31 @@ button.register-box, button.login-box, button.guest-box {
 .button1{
   background-color: #F79353;
 }
+
 .button2{
   background-color: #23882B ;
 }
+
 .button3{
   background-color: #E11C3D;
- 
 }
+
 .button4{
   background-color: #43ADE3;
 }
+
 .button5{
   background-color: #E0D034;
 }
+
 .button6{
   background-color:#1C65AD;
   
 }
 .button7{
-  
   background-color: #6DC681 ;
 }
+
 .button8{
   background-color: #46178F; 
 }
@@ -193,11 +202,13 @@ h1{
   text-align: center;
   color:#46178F;
 }
+
 h3{
   font-weight: lighter;
   font-size: 20px;
   text-align: center;
 }
+
 .question-form{
   display: flex;
   flex-wrap: wrap;
@@ -210,7 +221,6 @@ color:#551A8B;
 font-weight: 900;
 text-align: center;
 font-family: 'Montserrat', sand-serif;
-
 }
 
 .question-counter{
@@ -232,14 +242,15 @@ font-family: 'Montserrat', sand-serif;
   text-align:left;
   font-weight:bold;
 }
+
 .next-question{
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
   margin: 50px;
-  
 }
+
 .next-question button{
   background-color: #46178F;
   padding:20px;
@@ -260,7 +271,6 @@ font-family: 'Montserrat', sand-serif;
   flex-direction: row;
   flex-wrap: wrap;
   width:100%;
-  
 }
 
 .question-option{
@@ -272,6 +282,7 @@ font-family: 'Montserrat', sand-serif;
     width: 100%;
    margin:10px;
 }
+
 .game-stats{
   display: flex;
   justify-content: space-between;
@@ -284,22 +295,21 @@ font-family: 'Montserrat', sand-serif;
 .button-answer0 button{ 
   background-color: #23882B;
   width: 100%;
-
 }
+
 .button-answer1 button{ 
   background-color: #E11C3D;
   width: 100%;
- 
 }
+
 .button-answer2 button{ 
   background-color: #1C65AD;
   width: 100%;
- 
 }
+
 .button-answer3 button{ 
   background-color: #F79353;
   width: 100%;
- 
 }
 
 
