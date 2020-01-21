@@ -126,10 +126,11 @@ export default class TriviaForm extends Component {
           {this.state.message}
         </div>
         {this.state.showForm ?
-          <div>
+          <div className="question-form-wrapper">
             <form className="question-form"
               onSubmit={(e) => this.submitSwitch(e)} >
               <h2>Submit a Trivia Question</h2>
+              <br></br>
               <label htmlFor="category"> Category</label>
               <div className="custom-select" >
                 <select onChange={this.handleDropdown}>
@@ -141,27 +142,27 @@ export default class TriviaForm extends Component {
                   <option value="Around%20the%20World" > Around the world</option>
                 </select>
               </div>
-              <label htmlFor="question"> Question</label>
+              <label htmlFor="question"> Question </label>
               <input type="text"
                 name="question"
                 value={this.state.question}
                 onChange={this.handleChange} />
-              <label htmlFor="answer"> answer </label>
+              <label htmlFor="answer"> Answer </label>
               <input type="text"
                 name="answer"
                 value={this.state.answer}
                 onChange={this.handleChange} />
-              <label htmlFor="option1"> option 1</label>
+              <label htmlFor="option1"> Option 1</label>
               <input type="text"
                 name="option1"
                 value={this.state.option1}
                 onChange={this.handleChange} />
-              <label htmlFor="option2"> option 2</label>
+              <label htmlFor="option2"> Option 2</label>
               <input type="text"
                 name="option2"
                 value={this.state.option2}
                 onChange={this.handleChange} />
-              <label htmlFor="option3"> option 3</label>
+              <label htmlFor="option3"> Option 3</label>
               <input type="text"
                 name="option3"
                 value={this.state.option3}
@@ -180,7 +181,9 @@ export default class TriviaForm extends Component {
               }
               <input type="submit" />
             </form>
-            {this.state.showCancelButton && <button onClick={(e) => {
+            
+            
+            {this.state.showCancelButton && <button className="cancel-button" onClick={(e) => {
               e.preventDefault();
               this.setState({
                 showForm: false
@@ -195,6 +198,9 @@ export default class TriviaForm extends Component {
             })
           }}>{this.state.buttonText}</button>
         }
+        
+
+
       </div>
     )
   }
