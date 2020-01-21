@@ -205,13 +205,15 @@ export default class TriviaForm extends Component {
             }}>Cancel</button>}
           </div>
           :
+          <div className="submit-question-button">
           <button onClick={(e) => {
             e.preventDefault();
             this.setState({
               showForm: true,
               message: ''
             })
-          }}>{this.state.buttonText}</button>
+            }}>{this.state.buttonText}</button>
+            </div>
         }
 
 

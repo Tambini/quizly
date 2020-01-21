@@ -193,7 +193,7 @@ class GameBoard extends Component {
               </Link>
               :
               <Link to='/login'>
-                <button>Play another!</button>
+                <button className="play-again-button">Play another!</button>
               </Link>
             }
           </div>
