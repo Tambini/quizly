@@ -27,7 +27,6 @@ body {
   background-color: rgb(255, 255, 255);
   padding: 5px 0 30px 0;
   margin: 10px;
-  border: 1px solid rgb(176, 176, 176);
   border-radius: 5px;
   min-width: 300px;
   align-items: center;
@@ -246,9 +245,37 @@ footer {
   color: rgb(117, 121, 130); 
 }
 
-.question-form{
+.question-form {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.question-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  border-radius: 10px;
+}
+
+.custom-select {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.question-form-wrapper input[type=text] {
+  min-width: 400px;
+}
+
+.cancel-button {
+  background-color: rgb(213, 91, 91);
 }
 
 .gameboard-score{
