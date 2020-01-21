@@ -288,7 +288,7 @@ font-family: 'Montserrat', sand-serif;
   margin: 50px;
 }
 
-.next-question button, .score-button, .play-button{
+.next-question button, .score-button, .play-button, .play-again-button {
   background-color: #46178F;
   padding:20px;
   margin: 20px;
@@ -357,10 +357,30 @@ font-family: 'Montserrat', sand-serif;
   padding: 20px;
 }
 
-.score-list{
-  background-color: #46178F;
-  padding: 30px;
-}
+
+@keyframes score-list {
+  0% {
+    background-color:  #23882B
+  } 
+  33% {
+    background-color: #1C65AD
+  } 
+  67% {
+    background-color: #E11C3D
+  } 
+  100% {
+    background-color: #E0D034
+  } 
+  }
+  
+  .score-list{ 
+    padding:40px;
+    animation-name: score-list;
+    animation: score-list 14s ease infinite;
+    animation-direction: alternate;
+  }
+
+
 
 .score-title{
   color:white;
@@ -373,3 +393,4 @@ font-family: 'Montserrat', sand-serif;
 span {
   color: rgb(100, 49, 159);
 }
+
