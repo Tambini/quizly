@@ -873,9 +873,9 @@ const seed = async () => {
     },
     {
       answer: "Elizabeth I",
-      option1: "",
-      option2: " ",
-      option3: "",
+      option1: "Anne Boleyn",
+      option2: "Elizabeth II",
+      option3: "Edith of Wessex",
       question: "In 1570, Pius V issued a papal bull which excommunicated & tried to depose this English queen",
       value: 400,
       category: "history",
