@@ -104,7 +104,7 @@ export default class AdminLanding extends React.Component {
                     Category: {question.category}
                   </div>
                   <div>
-                    Approved?: {question.approved}
+                    Approved?: {question.approved ? "true" : "false"}
                   </div>
                   <button className="admin-edit-button" onClick={(e) => this.conditionalForm(e, true, question)}>
                     Edit
