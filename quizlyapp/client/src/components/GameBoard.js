@@ -151,9 +151,11 @@ class GameBoard extends Component {
 
         {//if questions are not loaded and game isnt over, show play button, otherwise show the question/answer options
           !this.state.currentQuestion && !this.state.gameOver ?
+            <div className="play-button-wrapper">
             <button className="play-button" onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
+            </div>
             :
-            !this.state.showNextQuestionButton && !this.state.gameOver &&
+              !this.state.showNextQuestionButton && !this.state.gameOver &&
             <div>
 
               <Question
