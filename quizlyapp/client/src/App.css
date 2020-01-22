@@ -85,11 +85,11 @@ button {
   margin: 5px 0 20px 0;
 }
 
-.welcome-message p {
+.welcome-message {
   color: grey;
   font-family: 'Satisfy', cursive;
   font-size: 25px;
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
 }
 
 .logout-wrapper {
@@ -118,6 +118,8 @@ label {
 header a {
   text-align: center;
   text-decoration: none;
+  font-family: 'Satisfy', cursive;
+  color: rgb(77, 131, 223);
 }
 
 img {
@@ -232,9 +234,10 @@ text-align: center;
 }
 
 h3 {
-  font-weight: lighter;
+  font-weight: 300;
   font-size: 20px;
   text-align: center;
+  color: rgb(90, 93, 99); 
 }
 
 h4 {
