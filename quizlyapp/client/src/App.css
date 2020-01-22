@@ -85,21 +85,28 @@ button {
   margin: 5px 0 20px 0;
 }
 
-.welcome-message p {
-  color: grey;
+.welcome-message {
   font-family: 'Satisfy', cursive;
   font-size: 25px;
-  margin: 30px auto 0 auto;
+  margin: 0 auto;
+}
+
+.logout-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10px;
+  width: 80vw;
 }
 
 .logout-button {
   padding: 10px;
-  font-size: 16px;
-  width: 100px;
+  font-size: 18px;
+  width: 120px;
   background-color: rgba(208, 208, 208, 0.386);
   color: rgb(82, 82, 82);
   font-weight: 500;
-  margin: 5px auto 30px auto;
+  text-align: center;
+  margin: 0;
 }
 
 label {
@@ -110,6 +117,8 @@ label {
 header a {
   text-align: center;
   text-decoration: none;
+  font-family: 'Satisfy', cursive;
+  color: rgb(77, 131, 223);
 }
 
 img {
@@ -170,7 +179,7 @@ button.register-box, button.login-box, button.guest-box {
 .button1, .button2, .button3, .button4, .button5, .button6, .button7, .button8 {
   width: 200px;
   height: 200px;
-  margin: 20px;
+  margin: 5px;
   padding: 50px;
   border-radius: 10px;
   text-align: center;
@@ -224,16 +233,17 @@ text-align: center;
 }
 
 h3 {
-  font-weight: lighter;
+  font-weight: 300;
   font-size: 20px;
   text-align: center;
+  color: rgb(90, 93, 99); 
 }
 
 h4 {
   font-size: 25px;
   text-align: center;
   font-family: 'Montserrat', sand-serif;
-  color: rgb(90, 93, 99); 
+  color: rgb(81, 82, 97);
 }
 
 footer {
@@ -290,7 +300,7 @@ justify-content: center;
 }
 
 .gameboard-score{
-font-size:25px;
+font-size: 20px;
 max-width: 50px;
 color:#551A8B;
 font-weight: 900;
@@ -298,8 +308,19 @@ text-align: center;
 font-family: 'Montserrat', sand-serif;
 }
 
+.gameboard-final {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+
 .question-counter{
-  font-size:25px;
+  font-size:20px;
   width: 100px;
   text-align: center;
   color:#551A8B;
@@ -308,57 +329,86 @@ font-family: 'Montserrat', sand-serif;
 }
 
 .question-category{
-  font-size:20px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(60, 60, 60);
+  padding: 10px;
 }
 
 .question-question {
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
-  text-align:left;
-  font-weight:bold;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  padding: 10px 20px;
+  color: rgb(81, 82, 97);
+  margin: 10px;
 }
 
 .next-question{
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 700;
   text-align: center;
-  margin: 50px;
+  margin: 30px auto;
+  padding: 20px;
+  color: rgb(81, 82, 97);
+}
+
+.play-button-wrapper {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .next-question button, .score-button, .play-button, .play-again-button {
-  background-color: #46178F;
-  padding:20px;
+  background-color: rgb(88, 62, 126);
+  padding: 20px 10px;
   margin: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  align-items: center
+  font-size: 18px;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: center;
 }
 
-.question-answer-options{
+.question-answer-options {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  width:100%;
+  flex-direction: row;
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .question-option{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 30px;
-    padding: 50px;
-    width: 100%;
-   margin:10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  min-width: 100px;
+  min-height: 200px;
+  margin: 0 auto;
 }
 
 .game-stats{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .button-answer0, .button-answer1, .button-answer2, .button-answer3 {
-  width:50%;
+  width: 50%;
 }
 
 .button-answer0 button{ 
@@ -386,7 +436,7 @@ font-family: 'Montserrat', sand-serif;
   flex-direction: row; 
   flex-wrap: wrap;
   font-family: 'Montserrat', sans-serif;
-  font-size:  40px;
+  font-size:  20px;
   font-weight: 600;
   color:white;
 }
@@ -412,15 +462,16 @@ font-family: 'Montserrat', sand-serif;
   }
   
   .score-list{ 
-    padding:40px;
+    padding: 40px;
+    margin: 10px auto;
+    border-radius: 20px;
     animation-name: score-list;
     animation: score-list 14s ease infinite;
     animation-direction: alternate;
   }
 
-
-
 .score-title{
+  font-size: 30px;
   color:white;
   font-family: 'Montserrat', sans-serif;
   font-weight:200;
