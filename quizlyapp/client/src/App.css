@@ -218,7 +218,7 @@ button.register-box, button.login-box, button.guest-box {
 }
 
 .button8{
-  background-color: #46178F; 
+  background-color: #551A8B; 
 }
 
 h1 {
@@ -346,7 +346,12 @@ font-family: 'Montserrat', sand-serif;
   font-size: 25px;
   padding: 10px 20px;
   color: rgb(81, 82, 97);
-  margin: 10px;
+  margin: auto;
+  max-width: 350px;
+  min-height: 200px;
+  overflow: wrap;
+  border: 2px solid #515161;
+  border-radius: 20px;
 }
 
 .next-question{
@@ -358,6 +363,11 @@ font-family: 'Montserrat', sand-serif;
   padding: 20px;
   color: rgb(81, 82, 97);
 }
+.message, .admin-message{
+  color:#515161;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
 
 .play-button-wrapper {
   display: flex;
@@ -365,15 +375,18 @@ font-family: 'Montserrat', sand-serif;
   justify-content: center;
 }
 
-.next-question button, .score-button, .play-button, .play-again-button {
-  background-color: rgb(88, 62, 126);
+.next-question button, .score-button, .play-button, .play-again-button, .admin-button {
+  background-color: #551A8B;
   padding: 20px 10px;
-  margin: 20px;
+  margin: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   align-items: center;
   border-radius: 20px;
   justify-content: center;
+}
+.play-again-button{
+  display: flow-root;
 }
 
 .question-answer-options {
@@ -395,7 +408,7 @@ font-family: 'Montserrat', sand-serif;
   font-weight: 500;
   padding: 20px;
   min-width: 100px;
-  min-height: 200px;
+  min-height: 100px;
   margin: 0 auto;
 }
 
@@ -484,3 +497,72 @@ span {
   color: rgb(100, 49, 159);
 }
 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px){
+
+    .login-form-wrapper, .register-form-wrapper{
+      margin:auto;
+    }
+
+    .question-options{
+      height: 200px;
+      width: 100vw;
+      margin:20px;
+      padding: 0;
+    }
+    app{
+      margin:0;
+      width:100vw;
+      padding:0;
+    }
+
+    .question-answer-options{
+      margin:auto;
+      padding-left: 0px;
+      width:100%;
+      overflow: hidden;
+    }
+
+    .score-list{
+      padding:0px;
+      min-width: 300px;
+      margin:10px
+    }
+    .score-title{
+      margin: 10px;
+      padding:20px 10px 0px 10px;
+    }
+    
+  }
+
+  .admin-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-message{
+    flex-direction: wrap;
+    width:95%;
+    padding-bottom:0px;
+    line-height: 1.8em;
+  }
+  .admin-button{
+    margin:auto
+  }
+
+  .admin-question{
+    text-align: center;
+    color:#515161;
+    font-size: 25px;
+    line-height: 1.6em;
+    border: 2px solid #551A8B;
+    margin: 20px;
+    padding:10px
+  }
+
+.admin-edit-button, .admin-delete-button{
+  background-color: #551A8B;
+  margin:10px;
+}

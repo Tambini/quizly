@@ -63,24 +63,25 @@ export default class AdminLanding extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
+
+      <div className="admin-wrapper">
+        <div className="admin-message">
           Number of unapproved trivia questions: {this.state.numberUnapproved}
         </div>
         {!this.state.showUnapprovedList &&
-          <div>
+          <div className="admin-message">
             Load yet to be approved trivia?
-          <button onClick={this.showUnapprovedList}>Load</button>
+          <button className="admin-button" onClick={this.showUnapprovedList}>Load</button>
           </div>
         }
         <div>
           {this.state.message}
-        </div>
+        </div >
         {this.state.unapprovedList.length > 0 && this.state.showUnapprovedList &&
           this.state.unapprovedList.map((question, key) => (
             <div className="unapproved-question" key={key}>
               {!this.state.showForm && !this.state.showDeleteButton &&
-                <div>
+                <div className="admin-question">
                   <div>
                     Question: {question.question}
                   </div>
@@ -105,10 +106,10 @@ export default class AdminLanding extends React.Component {
                   <div>
                     Approved?: {question.approved}
                   </div>
-                  <button onClick={(e) => this.conditionalForm(e, true, question)}>
+                  <button className="admin-edit-button" onClick={(e) => this.conditionalForm(e, true, question)}>
                     Edit
                   </button>
-                  <button onClick={() => this.deleteConfirmation(question)}>
+                  <button className="admin-delete-button" onClick={() => this.deleteConfirmation(question)}>
                     Delete
                   </button>
                 </div>
@@ -125,12 +126,12 @@ export default class AdminLanding extends React.Component {
               formComplete={this.formComplete}
               loadUnapprovedList={this.loadUnapprovedList}
             />
-            <button onClick={(e) => this.conditionalForm(e, false, {})}>Cancel</button>
+            <button className="admin-button" onClick={(e) => this.conditionalForm(e, false, {})}>Cancel</button>
           </div>
         }
         {this.state.showDeleteButton &&
           <div>
-            <button onClick={async (e) => {
+            <button className="admin-delete-button" onClick={async (e) => {
               e.preventDefault();
               await deleteTrivia(this.state.questionToEdit.id);
               this.setState({
@@ -138,8 +139,8 @@ export default class AdminLanding extends React.Component {
                 showDeleteButton: false
               })
               await this.loadUnapprovedList();
-            }}>YES, DELETE THIS QUESTION</button>
-            <button onClick={(e) => {
+            }}>YES, DELETE! </button>
+            <button className="admin-edit-button" onClick={(e) => {
               e.preventDefault();
               this.setState({
                 showDeleteButton: false,
