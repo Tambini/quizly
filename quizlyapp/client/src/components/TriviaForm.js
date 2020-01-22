@@ -50,7 +50,7 @@ export default class TriviaForm extends Component {
     e.preventDefault();
     switch (this.props.apiCall) {
       case ("post"):
-        if (this.state.answer === '' || this.state.option1 === '' || this.state.option2 === '' || this.state.option3 === '' || this.state.category === '') {
+        if (this.state.answer === '' || this.state.option1 === '' || this.state.option2 === '' || this.state.option3 === '' || this.state.category === '' || this.state.question === '') {
           this.setState({
             message: 'You have to fill out the form completely.'
           })
