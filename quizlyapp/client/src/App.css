@@ -1,0 +1,576 @@
+body {
+  background-color: rgb(203, 203, 203);
+  border: 0;
+}
+
+.error {
+  color: red;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid rgb(176, 176, 176);
+  border-radius: 5px;
+  min-width: 300px;
+  align-items: center;
+}
+
+.login-form-wrapper, .register-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 0 30px 0;
+  margin: 20px;
+  border-radius: 5px;
+  min-width: 300px;
+  align-items: center;
+  align-content: center;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  box-shadow: 1px 1px 2px 0.5px #cbcbcb8a;
+}
+
+.login-form, .register-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 300px;
+  align-items: center;
+  text-align: justify;
+}
+
+input[type=text], input[type=password]{
+  width: 180px;
+  padding: 10px;
+  background-color: rgba(244, 242, 242, 0.235);
+  margin: 10px;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  border-radius: 10px;
+  outline: 1px solid rgba(255, 255, 255, 0);
+  font-size: 16px;
+}
+
+input[type=submit] {
+  width: 200px;
+  padding: 10px;
+  background-color: rgb(76, 129, 175); 
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; 
+  margin: 5px 0 20px 0;
+}
+
+button {
+  width: 200px;
+  padding: 10px;
+  background-color: rgb(76, 129, 175); 
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; 
+  margin: 5px 0 20px 0;
+}
+
+.welcome-message {
+  font-family: 'Satisfy', cursive;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.alert-message{
+  padding: 30px;
+  margin: 10px auto;
+  color:#515161;
+  font-size: 25px;
+  text-align: center;
+}
+
+.logout-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 10px;
+  width: 80vw;
+}
+
+.logout-button {
+  padding: 10px;
+  font-size: 18px;
+  width: 120px;
+  background-color: rgba(208, 208, 208, 0.386);
+  color: rgb(82, 82, 82);
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+label {
+  text-align: center;
+  color: rgb(73, 76, 82); 
+}
+
+header a {
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Satisfy', cursive;
+  color: rgb(77, 131, 223);
+}
+
+img {
+  max-width: 200px;
+}
+
+.button-wrapper{
+  display: flex;  
+  flex-wrap: wrap;
+  flex-direction: initial;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-options-form-wrapper, .homepage-options-form-wrapper a {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background-color: #E0D034;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 120px;
+}
+
+.register-box {
+  background-color: #23882B ;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 120px;
+}
+
+.guest-box {
+  background-color: #F79353;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 120px;
+}
+
+button.register-box, button.login-box, button.guest-box {
+  font-size: 20px;
+  outline: 1px solid rgba(255, 255, 255, 0);
+}
+
+.button1, .button2, .button3, .button4, .button5, .button6, .button7, .button8 {
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Montserrat', sand-serif;
+  font-weight: 600;
+}
+
+.button1{
+  background-color: #F79353;
+}
+
+.button2{
+  background-color: #23882B ;
+}
+
+.button3{
+  background-color: #E11C3D;
+}
+
+.button4{
+  background-color: #43ADE3;
+}
+
+.button5{
+  background-color: #E0D034;
+}
+
+.button6{
+  background-color:#1C65AD;
+  
+}
+.button7{
+  background-color: #6DC681 ;
+}
+
+.button8{
+  background-color: #551A8B; 
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color:#46178F;
+}
+
+h2 {
+font-size: 30px;
+margin: 0 auto;
+text-align: center;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(90, 93, 99); 
+}
+
+h4 {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Montserrat', sand-serif;
+  color: rgb(81, 82, 97);
+}
+
+footer {
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  color: rgb(117, 121, 130); 
+}
+
+.question-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.question-form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid rgb(160, 160, 160, 0.5); 
+  border-radius: 10px;
+}
+
+.question-form-wrapper input[type=text] {
+  width: 50vw;
+}
+
+.cancel-button {
+  background-color: rgb(213, 91, 91);
+}
+
+.custom-select {
+  padding: 20px;
+  font-size: 20px;
+  
+}
+
+.submit-question-button {
+margin: 50px auto;
+display: flex;
+text-align: center;
+align-items: center;
+justify-items: center;
+align-content: center;
+justify-content: center;
+}
+
+.gameboard-score{
+font-size: 20px;
+max-width: 50px;
+color:#551A8B;
+font-weight: 900;
+text-align: center;
+font-family: 'Montserrat', sand-serif;
+}
+
+.gameboard-final {
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+
+.question-counter{
+  font-size:20px;
+  width: 100px;
+  text-align: center;
+  color:#551A8B;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.question-category{
+  font-size: 20px;
+  text-align: center;
+  margin: 10px auto;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(60, 60, 60);
+  padding: 10px;
+}
+
+.question-question {
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  padding: 20px;
+  color: rgb(81, 82, 97);
+  margin: 0 auto;
+  max-width: 350px;
+  min-height: fit-content;
+  overflow: wrap;
+  border: 2px solid #616165a3;
+  border-radius: 20px;
+}
+
+.next-question{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin: 30px auto;
+  padding: 20px;
+  color: rgb(81, 82, 97);
+}
+.message, .admin-message{
+  color:#515161;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+
+.play-button-wrapper {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.next-question button, .score-button, .play-button, .play-again-button, .admin-button {
+  background-color: #551A8B;
+  padding: 20px 10px;
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: center;
+}
+.play-again-button{
+  display: flow-root;
+}
+
+.question-answer-options {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.question-option{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 0 auto;
+}
+
+.game-stats{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.button-answer0, .button-answer1, .button-answer2, .button-answer3 {
+  width: 50%;
+}
+
+.button-answer0 button{ 
+  background-color: #23882B;
+  width: 100%;
+}
+
+.button-answer1 button{ 
+  background-color: #E11C3D;
+  width: 100%;
+}
+
+.button-answer2 button{ 
+  background-color: #1C65AD;
+  width: 100%;
+}
+
+.button-answer3 button{ 
+  background-color: #F79353;
+  width: 100%;
+}
+
+.score{
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
+  font-size:  20px;
+  font-weight: 600;
+  color:white;
+}
+
+.score-number, .score-score, .score-name{
+  padding: 20px;
+}
+
+
+@keyframes score-list {
+  0% {
+    background-color:  #23882B
+  } 
+  33% {
+    background-color: #1C65AD
+  } 
+  67% {
+    background-color: #E11C3D
+  } 
+  100% {
+    background-color: #E0D034
+  } 
+  }
+  
+  .score-list{ 
+    padding: 40px;
+    margin: 10px auto;
+    border-radius: 20px;
+    animation-name: score-list;
+    animation: score-list 14s ease infinite;
+    animation-direction: alternate;
+  }
+
+.score-title{
+  font-size: 30px;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:200;
+  margin:5px;
+  text-decoration: underline overline dotted white;
+}
+
+span {
+  color: rgb(100, 49, 159);
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px){
+
+    .login-form-wrapper, .register-form-wrapper{
+      margin:auto;
+    }
+
+    .question-options{
+      height: 200px;
+      width: 100vw;
+      margin:20px;
+      padding: 0;
+    }
+    app{
+      margin:0;
+      width:100vw;
+      padding:0;
+    }
+
+    .question-answer-options{
+      margin:auto;
+      padding-left: 0px;
+      width:100%;
+      overflow: hidden;
+    }
+
+    .score-list{
+      padding:0px;
+      min-width: 300px;
+      margin:10px
+    }
+    .score-title{
+      margin: 10px;
+      padding:20px 10px 0px 10px;
+    }
+    
+  }
+
+  .admin-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-message{
+    flex-direction: wrap;
+    width:95%;
+    padding-bottom:0px;
+    line-height: 1.8em;
+  }
+  .admin-button{
+    margin:auto
+  }
+
+  .admin-question{
+    text-align: center;
+    color:#515161;
+    font-size: 25px;
+    line-height: 1.6em;
+    border: 2px solid #551A8B;
+    margin: 20px;
+    padding:10px
+  }
+
+.admin-edit-button, .admin-delete-button{
+  background-color: #551A8B;
+  margin:10px;
+}
