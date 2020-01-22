@@ -82,6 +82,12 @@ class App extends React.Component {
     }
   }
 
+  clearErrorMsg = () => {
+    this.setState({
+      errorText: ''
+    })
+  }
+
   checkForAdmin = async () => {
     const adminList = await getAdmins();
     const admin = adminList.filter(name =>
@@ -135,6 +141,7 @@ class App extends React.Component {
           currentUser={this.state.currentUser}
           handleLogout={this.handleLogout}
           admin={this.state.admin}
+          clearErrorMsg={this.clearErrorMsg}
         />
 
 
