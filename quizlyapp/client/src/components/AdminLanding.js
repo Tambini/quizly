@@ -74,7 +74,7 @@ export default class AdminLanding extends React.Component {
           <button className="admin-button" onClick={this.showUnapprovedList}>Load</button>
           </div>
         }
-        <div>
+        <div className="error">
           {this.state.message}
         </div >
         {this.state.unapprovedList.length > 0 && this.state.showUnapprovedList &&
