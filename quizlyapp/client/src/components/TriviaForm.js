@@ -37,11 +37,20 @@ export default class TriviaForm extends Component {
     })
   }
 
+  handleCheckboxChange = (e) => {
+    const name = e.target.name;
+    // const value = e.target.value;
+    const checked = e.target.checked;
+    this.setState({
+      [name]: checked
+    })
+  }
+
   submitSwitch = async (e) => {
     e.preventDefault();
     switch (this.props.apiCall) {
       case ("post"):
-        if (this.state.answer === '' || this.state.option1 === '' || this.state.option2 === '' || this.state.option3 === '' || this.state.category === '') {
+        if (this.state.answer === '' || this.state.option1 === '' || this.state.option2 === '' || this.state.option3 === '' || this.state.category === '' || this.state.question === '') {
           this.setState({
             message: 'You have to fill out the form completely.'
           })
@@ -124,8 +133,6 @@ export default class TriviaForm extends Component {
   }
 
   render() {
-    console.log(this.state.showForm);
-
     return (
       <div>
         <div className="alert-message">
@@ -144,7 +151,7 @@ export default class TriviaForm extends Component {
                   <option value="animals"> Animals</option>
                   <option value="science"> science</option>
                   <option value="history">History</option>
-                  <option value="studpid%20answer"> Stupid aswers</option>
+                  <option value="studpid%20answer"> Stupid answers</option>
                   <option value="Around%20the%20World" > Around the world</option>
                 </select>
               </div>
@@ -187,10 +194,11 @@ export default class TriviaForm extends Component {
                 <div>
                   <label htmlFor="approved"> approved</label>
                   <br />
-                  <input type="text"
+                  <input type="checkbox"
                     name="approved"
-                    value={this.state.approved}
-                    onChange={this.handleChange} />
+                    checked={this.state.approved}
+                    // value={this.state.approved}
+                    onChange={this.handleCheckboxChange} />
                 </div>
               }
               <input type="submit" />
@@ -206,14 +214,14 @@ export default class TriviaForm extends Component {
           </div>
           :
           <div className="submit-question-button">
-          <button onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              showForm: true,
-              message: ''
-            })
+            <button onClick={(e) => {
+              e.preventDefault();
+              this.setState({
+                showForm: true,
+                message: ''
+              })
             }}>{this.state.buttonText}</button>
-            </div>
+          </div>
         }
 
 

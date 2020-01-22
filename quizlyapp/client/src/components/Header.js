@@ -11,7 +11,7 @@ const Header = (props) => {
           <button className="logout-button" onClick={props.handleLogout}>Logout</button>
         </div>
       }
-        
+
       <header>
         <Link to='/login'>
           <h1>Quizly</h1>
@@ -27,15 +27,15 @@ const Header = (props) => {
           <div className="homepage-options-form-wrapper">
 
             <Link to='/login'>
-              <button className="login-box"> Login </button>
+              <button className="login-box" onClick={props.clearErrorMsg}> Login </button>
             </Link>
 
             <Link to='/register'>
-              <button className="register-box"> Register </button>
+              <button className="register-box" onClick={props.clearErrorMsg}> Register </button>
             </Link>
 
             <Link to='/guest-landing'>
-              <button className="guest-box"> Guest </button>
+              <button className="guest-box" onClick={props.clearErrorMsg}> Guest </button>
             </Link>
 
           </div>

@@ -91,6 +91,14 @@ button {
   margin: 0 auto;
 }
 
+.alert-message{
+  padding: 30px;
+  margin: 10px auto;
+  color:#515161;
+  font-size: 25px;
+  text-align: center;
+}
+
 .logout-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -344,13 +352,13 @@ font-family: 'Montserrat', sand-serif;
   text-align: center;
   font-weight: 600;
   font-size: 25px;
-  padding: 10px 20px;
+  padding: 20px;
   color: rgb(81, 82, 97);
-  margin: auto;
+  margin: 0 auto;
   max-width: 350px;
-  min-height: 200px;
+  min-height: fit-content;
   overflow: wrap;
-  border: 2px solid #515161;
+  border: 2px solid #616165a3;
   border-radius: 20px;
 }
 
