@@ -37,6 +37,15 @@ export default class TriviaForm extends Component {
     })
   }
 
+  handleCheckboxChange = (e) => {
+    const name = e.target.name;
+    // const value = e.target.value;
+    const checked = e.target.checked;
+    this.setState({
+      [name]: checked
+    })
+  }
+
   submitSwitch = async (e) => {
     e.preventDefault();
     switch (this.props.apiCall) {
@@ -187,10 +196,11 @@ export default class TriviaForm extends Component {
                 <div>
                   <label htmlFor="approved"> approved</label>
                   <br />
-                  <input type="text"
+                  <input type="checkbox"
                     name="approved"
-                    value={this.state.approved}
-                    onChange={this.handleChange} />
+                    checked={this.state.approved}
+                    // value={this.state.approved}
+                    onChange={this.handleCheckboxChange} />
                 </div>
               }
               <input type="submit" />
@@ -206,14 +216,14 @@ export default class TriviaForm extends Component {
           </div>
           :
           <div className="submit-question-button">
-          <button onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              showForm: true,
-              message: ''
-            })
+            <button onClick={(e) => {
+              e.preventDefault();
+              this.setState({
+                showForm: true,
+                message: ''
+              })
             }}>{this.state.buttonText}</button>
-            </div>
+          </div>
         }
 
 
