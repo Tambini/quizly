@@ -26,7 +26,8 @@ class GameBoard extends Component {
       gameOver: false,
       showScores: false,
       questionsCorrect: 0,
-      scoreMessage: 'Score'
+      scoreMessage: 'Score',
+      showStats: false
     }
   }
 
@@ -124,6 +125,13 @@ class GameBoard extends Component {
 
     })
   }
+  handleStats = () => {
+    this.setState({
+      showStats: !this.state.showStats
+    })
+  }
+
+
 
   submitPlayerScore = async (score) => {
     await addNewScore({ username: this.props.username, score: this.state.scoreTotal });
@@ -140,22 +148,25 @@ class GameBoard extends Component {
   render() {
     return (
       <div className="gameboard">
-        <div className="game-stats">
+        {this.state.showStats && <div className="game-stats" >
           <div className="gameboard-score">
-            {this.state.scoreMessage} {this.state.scoreTotal} 
+            {this.state.scoreMessage} {this.state.scoreTotal}
           </div>
           <div className="question-counter">
-            Question {this.state.questionCounter} / 10 
+            Question {this.state.questionCounter} / 10
           </div>
-        </div>
+        </div>}
 
         {//if questions are not loaded and game isnt over, show play button, otherwise show the question/answer options
           !this.state.currentQuestion && !this.state.gameOver ?
             <div className="play-button-wrapper">
-            <button className="play-button" onClick={this.getRandomQuestion}>PRESS ME TO PLAY!</button>
+              <button className="play-button" onClick={() => {
+                this.getRandomQuestion()
+                this.handleStats()
+              }}>PRESS ME TO PLAY!</button>
             </div>
             :
-              !this.state.showNextQuestionButton && !this.state.gameOver &&
+            !this.state.showNextQuestionButton && !this.state.gameOver &&
             <div>
 
               <Question
@@ -169,7 +180,7 @@ class GameBoard extends Component {
         {
           this.state.showNextQuestionButton &&
           <div className="next-question">
-            <div> {this.state.message}</div>
+            <div className="message"> {this.state.message}</div>
             <button onClick={this.showNext}>NEXT QUESTION</button>
 
           </div>
@@ -178,10 +189,11 @@ class GameBoard extends Component {
           this.state.gameOver && !this.state.showScores &&
 
           <div className="gameboard-final">
-            <div>{this.state.questionsCorrect} / {this.state.questionCounter} Questions correctly answered!</div>
+            <div className="message">{this.state.questionsCorrect} / {this.state.questionCounter} Questions correctly answered!</div>
             <button className="score-button" onClick={async () => {
               await this.submitPlayerScore(this.state.scoreTotal);
               this.showScores();
+              this.handleStats();
             }}>See High Scores!</button>
           </div>
         }
@@ -191,7 +203,7 @@ class GameBoard extends Component {
             <ScoreList />
             {this.props.username === "Guest" ?
               <Link to='/guest-landing'>
-                <button>Play another!</button>
+                <button className="play-again-button">Play another!</button>
               </Link>
               :
               <Link to='/login'>
