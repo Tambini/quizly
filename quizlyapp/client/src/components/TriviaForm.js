@@ -133,8 +133,6 @@ export default class TriviaForm extends Component {
   }
 
   render() {
-    console.log(this.state.showForm);
-
     return (
       <div>
         <div className="alert-message">
