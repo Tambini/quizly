@@ -83,7 +83,7 @@ const seed = async () => {
       option3: "skunk",
       question: "A Sly creature sought by sportsmen riding to hounds",
       value: 100,
-      category: "animals",
+      category: "Animals",
       approved: true
 
     },
@@ -94,7 +94,7 @@ const seed = async () => {
       option3: "Iguana",
       question: "The ship of the desert",
       value: 200,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -105,7 +105,7 @@ const seed = async () => {
       option3: "parrots",
       question: "The children are poults, the mothers hens & the fathers toms",
       value: 300,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -116,7 +116,7 @@ const seed = async () => {
       option3: "buzkashi",
       question: "Name of the sport of hunting birds with other birds",
       value: 400,
-      category: "animals",
+      category: "Animals",
       approved: true
 
     },
@@ -127,7 +127,7 @@ const seed = async () => {
       option3: "the whale",
       question: "Floating sea creature named by sailors for the Iberian fighting ship it resembles",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
 
     },
@@ -138,7 +138,7 @@ const seed = async () => {
       option3: "rabbits",
       question: "Scooby-Doo, Goofy & Pluto are cartoon versions",
       value: 100,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -149,7 +149,7 @@ const seed = async () => {
       option3: " horse",
       question: "Tibetan ox used to carry travelers and mail",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
 
     },
@@ -160,7 +160,7 @@ const seed = async () => {
       option3: "chipmunk",
       question: "These rodents first got to America by stowing away on ships",
       value: 100,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -170,7 +170,7 @@ const seed = async () => {
       option3: "the mouth",
       question: "There are about 40,000 muscles & tendons in this part of an elephant's body",
       value: 200,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -181,7 +181,7 @@ const seed = async () => {
       option3: "the shark",
       question: "Close relative of the pig, though its name means 'river horse'",
       value: 400,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -191,7 +191,7 @@ const seed = async () => {
       option3: "a miniature horse",
       question: "If this species of hybrid's parents were reversed, you'd get a hinny",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -201,7 +201,7 @@ const seed = async () => {
       option3: "a horse",
       question: "When husbands 'pop' for an ermine coat, they're actually buying this fur",
       value: 300,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -211,7 +211,7 @@ const seed = async () => {
       option3: "cheetah",
       question: "Cat-like animal raised for the secretions it produces which are used to make perfumes",
       value: 400,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -221,7 +221,7 @@ const seed = async () => {
       option3: "lion",
       question: "According to New York's Bronx Zoo, it's 'the most dangerous animal in the world'",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -231,7 +231,7 @@ const seed = async () => {
       option3: "their genitals",
       question: "New Zealanders used to raise red deer for these, which were ground & used as aphrodisiacs",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
 
     },
@@ -243,7 +243,7 @@ const seed = async () => {
       option3: "beetles",
       question: "Varieties of these insects include bee, soldier, flower, blow & fruit",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -254,7 +254,7 @@ const seed = async () => {
       option3: "a starfish",
       question: "Types of this aquatic creature include chimney, sheep's wool, and common bath",
       value: 500,
-      category: "animals",
+      category: "Animals",
       approved: true
     },
     {
@@ -264,7 +264,7 @@ const seed = async () => {
       option3: "28",
       question: "Number of different basic shapes in a box of Post Alpha-Bits",
       value: 200,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -274,7 +274,7 @@ const seed = async () => {
       option3: "6.5",
       question: "Whole number equidistant from 5 & 7",
       value: 400,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -284,7 +284,7 @@ const seed = async () => {
       option3: "Benjamin Franklin",
       question: "President the Hoover Dam is named after",
       value: 100,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -294,7 +294,7 @@ const seed = async () => {
       option3: "Small Farm",
       question: "This group's 1st big U.S. hit was 'In a Big Country'",
       value: 400,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -304,7 +304,7 @@ const seed = async () => {
       option3: "Confederacy",
       question: "Word emblazoned in large letters in the center of the seal of Huntsville, Alabama",
       value: 500,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -314,7 +314,7 @@ const seed = async () => {
       option3: "Springfield",
       question: "Town in S.D. that put up 9' statue of Fr. Pierre Jean De Smet, who died in 1873 & never visited the town",
       value: 400,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -324,7 +324,7 @@ const seed = async () => {
       option3: "Kanchenjunga",
       question: "It initially got its name from being the second Karakoram peak to be measured",
       value: 500,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -334,7 +334,7 @@ const seed = async () => {
       option3: "Encarta",
       question: "Begun in 1829, it was the 1st encyclopedia published in America",
       value: 500,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -344,7 +344,7 @@ const seed = async () => {
       option3: "The Mayflower Hotel",
       question: "Name of the hotel & office complex where the Watergate break-in occurred",
       value: 200,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -354,7 +354,7 @@ const seed = async () => {
       option3: "Jacksonville",
       question: "2 Civil War forts were built on this western island of the Florida Keys",
       value: 400,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -364,7 +364,7 @@ const seed = async () => {
       option3: "Michaels",
       question: "In June 1997 this Chicago department store marshalled its forces for a 'Field Days Sale'",
       value: 500,
-      category: "stupid answers",
+      category: "Stupid Answers",
       approved: true
     },
     {
@@ -627,7 +627,7 @@ const seed = async () => {
       option3: "5",
       question: "A typical snowflake has this many sides",
       value: 100,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -637,7 +637,7 @@ const seed = async () => {
       option3: "aluminium",
       question: "Common element whose refined forms include pig, cast or wrought",
       value: 200,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -647,7 +647,7 @@ const seed = async () => {
       option3: "travel",
       question: "After length, width & depth, the 4th dimension",
       value: 300,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -657,7 +657,7 @@ const seed = async () => {
       option3: "mosquito",
       question: "Type of organism that lives off of another, contributing nothing",
       value: 400,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -667,7 +667,7 @@ const seed = async () => {
       option3: "reverberation",
       question: "A sound's repetition by reflection",
       value: 100,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -677,7 +677,7 @@ const seed = async () => {
       option3: "Jean-Baptiste Lamarck",
       question: "He originated 'The Origin of Species'",
       value: 200,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -687,7 +687,7 @@ const seed = async () => {
       option3: "a quarck",
       question: "Negative particle that orbits an atom's nucleus",
       value: 400,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -697,7 +697,7 @@ const seed = async () => {
       option3: "Carbohydrates",
       question: "Cytology is the study of these biological building blocks",
       value: 500,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -707,7 +707,7 @@ const seed = async () => {
       option3: "cheetah",
       question: "The only animal that has walked on the moon",
       value: 100,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -717,7 +717,7 @@ const seed = async () => {
       option3: "Beethoven",
       question: "Not just 'Ludwig von; but any male duck",
       value: 200,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -727,7 +727,7 @@ const seed = async () => {
       option3: "running away",
       question: "Research shows a mother eating a candy bar before doing this helps a baby fall asleep quicker",
       value: 300,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -737,7 +737,7 @@ const seed = async () => {
       option3: "cats&dogs",
       question: "Partly frozen rain or rain mixed with snow",
       value: 400,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -747,7 +747,7 @@ const seed = async () => {
       option3: "Antarctica",
       question: "If our solar system fit into a cup, our galaxy would be the size of this 3rd largest continent",
       value: 500,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -757,7 +757,7 @@ const seed = async () => {
       option3: "freedom",
       question: "Most living organisms have millions, but a prisoner only has one",
       value: 100,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -767,7 +767,7 @@ const seed = async () => {
       option3: "elements",
       question: "A 5th C. B.C. Greek philosopher was 1st to theorize that all matter is made of these",
       value: 200,
-      category: "science",
+      category: "Science",
       approved: true
     },
 
@@ -778,7 +778,7 @@ const seed = async () => {
       option3: "Tropics",
       question: "Days & nights are always 12 hours long there",
       value: 400,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -788,7 +788,7 @@ const seed = async () => {
       option3: "cheetahs",
       question: "If you're studying mensuration, you're studying this",
       value: 500,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -798,7 +798,7 @@ const seed = async () => {
       option3: "sound",
       question: "Bioluminescence is the emission of this from living organisms",
       value: 100,
-      category: "science",
+      category: "Science",
       approved: true
     },
     {
@@ -808,7 +808,7 @@ const seed = async () => {
       option3: " the French",
       question: "The western jury system is thought to have been brought to England by these peoples in 1066",
       value: 200,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -818,7 +818,7 @@ const seed = async () => {
       option3: "the 20th",
       question: "Century known as the 'high Renaissance'",
       value: 300,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -828,7 +828,7 @@ const seed = async () => {
       option3: "Cambodia",
       question: "World power whose emperor gave up claims to divinity before it adopted a new constitution in 1947",
       value: 400,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -838,7 +838,7 @@ const seed = async () => {
       option3: "the Truman Doctrine",
       question: "1957 U.S. policy allowing the president to use armed force in the Middle East",
       value: 500,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -848,7 +848,7 @@ const seed = async () => {
       option3: "Bethlehem",
       question: "In July 1099, crusaders stormed this holy city, killing its Muslim & Jewish inhabitants",
       value: 100,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -858,7 +858,7 @@ const seed = async () => {
       option3: "Constantinople",
       question: "Legend says an Etruscan family, the Tarquins, ruled this 'Eternal City' from 616 to 510 B.C.",
       value: 200,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -868,17 +868,17 @@ const seed = async () => {
       option3: " Narmer",
       question: "Because of his Albanian descent, some said this king, deposed in 1952, was not a true Egyptian",
       value: 300,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
       answer: "Elizabeth I",
-      option1: "",
-      option2: " ",
-      option3: "",
+      option1: "Anne Boleyn",
+      option2: "Elizabeth II",
+      option3: "Edith of Wessex",
       question: "In 1570, Pius V issued a papal bull which excommunicated & tried to depose this English queen",
       value: 400,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -888,7 +888,7 @@ const seed = async () => {
       option3: "Sweden",
       question: "Circa 950, under Harald Bluetooth, this was 1st Scandinavian country unified under just 1 king",
       value: 500,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -898,7 +898,7 @@ const seed = async () => {
       option3: "Speaker of the House",
       question: "The last married man to hold this job was Adrian II in the 9th century",
       value: 100,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -908,7 +908,7 @@ const seed = async () => {
       option3: " General Pershing",
       question: "It's said he angered Sioux by letting cavalry trample sacred cannabis field on way to Little Big Horn",
       value: 200,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -918,7 +918,7 @@ const seed = async () => {
       option3: " Boquet",
       question: "In 1763 he battled the English for Detroit -- where his name still builds excitement",
       value: 300,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -928,7 +928,7 @@ const seed = async () => {
       option3: "Gertrude B. Elion",
       question: "When Dr. Pauling won his 2nd Nobel Prize in '62, he was 1st 2-time winner since this woman 51 years earlier",
       value: 400,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -938,7 +938,7 @@ const seed = async () => {
       option3: "Hatie",
       question: "This country reported in 1923 that U.S. famine relief efforts there had saved 10 million lives in 2 years",
       value: 500,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -948,7 +948,7 @@ const seed = async () => {
       option3: " Charlotte of Savoy",
       question: "She restored Charles VII to the throne, but he didn't lift a finger to save her from the stake",
       value: 100,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -958,7 +958,7 @@ const seed = async () => {
       option3: " Marie-Antoniette of France",
       question: "It's said this royal grandmother of Kaiser Wilhelm II wouldn't let him visit Ireland",
       value: 200,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -968,7 +968,7 @@ const seed = async () => {
       option3: "the Sullivan Brothers(Joseph & Albert)",
       question: "In 1881, despite a $10,000 reward for the arrest of these brothers, the posters left out 'dead or alive'",
       value: 300,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -978,7 +978,7 @@ const seed = async () => {
       option3: "the Portuguese Empire",
       question: "Darius I ruled this vast empire from 2 capitals, Susa & Persepolis",
       value: 400,
-      category: "history",
+      category: "History",
       approved: true
     },
     {
@@ -988,7 +988,7 @@ const seed = async () => {
       option3: "Danish East India Company",
       question: "In 1858, the Brittish government took over the rule of India from this company",
       value: 500,
-      category: "history",
+      category: "History",
       approved: true
     },
 

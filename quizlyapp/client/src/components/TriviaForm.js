@@ -151,7 +151,7 @@ export default class TriviaForm extends Component {
                   <option value="animals"> Animals</option>
                   <option value="science"> science</option>
                   <option value="history">History</option>
-                  <option value="studpid%20answer"> Stupid answers</option>
+                  <option value="stupid%20answer"> Stupid answers</option>
                   <option value="Around%20the%20World" > Around the world</option>
                 </select>
               </div>
